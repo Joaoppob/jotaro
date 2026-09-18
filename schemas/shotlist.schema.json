@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jotaro.local/schemas/shotlist.schema.json",
+  "title": "Jotaro shot-list contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "campanha",
+    "cliente",
+    "formato",
+    "duracao_total_seg",
+    "modelo",
+    "referencias_obrigatorias",
+    "anchor_personagem",
+    "cenas",
+    "gate_consistencia"
+  ],
+  "properties": {
+    "campanha": { "type": "string", "minLength": 1 },
+    "cliente": { "type": "string", "minLength": 1 },
+    "data": { "type": "string" },
+    "round": { "type": "integer" },
+    "objetivo": { "type": "string" },
+    "tipo_marca": {
+      "type": "string",
+      "enum": ["personagem", "produto", "servico"],
+      "description": "Opcional. Natureza do sujeito da marca: personagem (mascote/avatar), produto (objeto fisico) ou servico (identidade visual sem personagem literal). Orienta a leitura de anchor_personagem; arquivos sem este campo continuam validos."
+    },
+    "formato": {
+      "type": "string",
+      "pattern": "9:16"
+    },
+    "duracao_total_seg": {
+      "type": "integer",
+      "minimum": 4
+    },
+    "modelo": {
+      "type": "string",
+      "pattern": "nano_banana_2"
+    },
+    "referencias_obrigatorias": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "description": "Path relativo de uma ref, DENTRO de RAG/identidade-visual/. Aceita a pasta plana (sujeito unico: RAG/identidade-visual/mage1.png) E subpastas por personagem (asset-first: RAG/identidade-visual/nina/zoe_05.png). Sem traversal (..).",
+        "pattern": "^RAG/identidade-visual/([^/.]+/)*[^/]+\\.(png|jpg|jpeg|webp)$"
+      }
+    },
+    "anchor_personagem": {
+      "type": "string",
+      "minLength": 40,
+      "description": "Anchor visual do SUJEITO da marca: personagem, produto OU identidade visual (nao exige um personagem literal). Em marca sem personagem, enumera os tracos distintivos do produto ou da identidade que devem reaparecer em cada cena. Nome historico mantido por compatibilidade de contrato."
+    },
+    "cenas": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["n", "tag", "tempo_seg", "intencao", "salvar_em"],
+        "properties": {
+          "n": { "type": "integer", "minimum": 1 },
+          "tag": { "type": "string", "minLength": 1 },
+          "tempo_seg": {
+            "type": "string",
+            "pattern": "^[0-9]+-[0-9]+$"
+          },
+          "intencao": { "type": "string", "minLength": 10 },
+          "personagem_visivel": {
+            "type": "string",
+            "enum": ["completo", "parcial", "ausente"]
+          },
+          "fonte": {
+            "enum": ["biblioteca", "geracao"],
+            "description": "ADITIVO (asset-first). \"biblioteca\" = cena reaproveita asset existente (sem prompt; custo 0); \"geracao\" = cena gerada (legado/default). Opcional: ausente equivale a \"geracao\". A regra condicional por fonte (geracao exige prompt; biblioteca exige asset_path) e validada pelo verify."
+          },
+          "personagem": {
+            "type": ["string", "null"],
+            "description": "ADITIVO (asset-first). Chave de personagem da cena (subpasta RAG/identidade-visual/<char>/), coletivo (ex: \"trio\") ou null. Opcional/nulo em sujeito unico (mago)."
+          },
+          "asset_path": {
+            "type": ["string", "null"],
+            "description": "ADITIVO (asset-first). Cena biblioteca: path relativo do asset, DENTRO de RAG/identidade-visual/. Cena geracao: null (ou ausente). Path-safety validada pelo verify."
+          },
+          "prompt": {
+            "type": "string",
+            "minLength": 80,
+            "pattern": "9:16"
+          },
+          "salvar_em": {
+            "type": "string",
+            "pattern": "^output/imagens/[^/]+\\.png$"
+          },
+          "cinematografia": {
+            "type": "object",
+            "description": "ADITIVO (nivel-100). Intencao cinematografica preservada do storyboard/DP: composicao, luz, camera, cor. Opcional para manter compatibilidade com shot-lists antigos."
+          },
+          "anti_ia": {
+            "type": "object",
+            "description": "ADITIVO (nivel-100). Guardrails de prompt contra tell IA: evitar quality-words/plastico/luz chapada e focar fisica, textura e estabilidade."
+          },
+          "negative_prompt": {
+            "type": "string",
+            "description": "ADITIVO (nivel-100, Wave J). Negative prompt curto e targeted (<=15 tokens), sem listas genericas estilo SDXL. Opcional; validado por negative-prompt-discipline.cjs."
+          }
+        }
+      }
+    },
+    "gate_consistencia": {
+      "type": "object",
+      "minProperties": 1
+    },
+    "personas": {
+      "type": "object",
+      "description": "ADITIVO (nivel-100). Dossie de persona por personagem: mapeia <personagem> -> descricao (string OU { personalidade, mundo, voz, comportamento, cues }). Alimenta o persona-carry.cjs, que exige que cada cena do personagem carregue cues de personalidade/mundo no prompt/intencao. Opcional; sujeito unico nao precisa."
+    }
+  }
+}

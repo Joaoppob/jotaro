@@ -1,0 +1,136 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://jotaro.local/schemas/prompt-forge.schema.json",
+  "title": "Jotaro prompt-forge contract",
+  "description": "O artefato central do 0.7: o PROMPT UNICO que vai pro Higgsfield. O prompt-smith preenche shots[] (estrutura que os gates leem) e monta o campo prompt (a prosa multishot rica que efetivamente vai pro modelo). Os dois sao coerentes entre si: shots[] da estrutura, prompt entrega.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "projeto",
+    "formato",
+    "modelo",
+    "shots",
+    "prompt"
+  ],
+  "properties": {
+    "projeto": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Nome do projeto/campanha ativo (ex.: 'ExampleBrand')."
+    },
+    "formato": {
+      "type": "string",
+      "enum": ["video", "video_mudo", "imagem"],
+      "description": "Natureza do output forjado. 'video' = clipe com audio/locucao; 'video_mudo' = clipe sem audio; 'imagem' = still unico."
+    },
+    "modelo": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Id do modelo Higgsfield destino do prompt (ex.: seedance_2_0_mini -- melhor desempenho confirmado hoje -- kling3_0, seedance_2_0, nano_banana_2). O custo real vem do get_cost do MCP em runtime."
+    },
+    "aspect_ratio": {
+      "type": "string",
+      "minLength": 3,
+      "description": "Razao de aspecto do output. Default operacional: \"9:16\" (vertical TikTok/Reels/Shorts). Quando ausente, o produtor assume 9:16."
+    },
+    "personagem": {
+      "type": "string",
+      "description": "Opcional. Nome da personagem da marca presente no prompt (ex.: 'Duda'). Casa com a subpasta de RAG/identidade-visual/<personagem>/ e com o Element treinado no Higgsfield."
+    },
+    "element_id": {
+      "type": ["string", "null"],
+      "description": "Id do Element do Higgsfield que carrega a referencia visual da personagem. null quando o prompt nao tem personagem ancorada em Element. Quando presente, e injetado no campo prompt como <<<element_id>>>; o backend reescreve esse marcador para @nome na hora de enviar ao modelo."
+    },
+    "produto_element_id": {
+      "type": ["string", "null"],
+      "description": "Opcional. Id do Element do Higgsfield que carrega a referencia visual REAL do produto fisico central (mesmo fluxo do element_id de personagem, criado a partir de RAG/identidade-visual/marca/). null quando nao ha produto de destaque ancorado em Element. Quando presente, e injetado no campo prompt como <<<produto_element_id>>> no trecho que descreve o produto -- sem isso, o modelo tende a inventar a embalagem em vez de reproduzir a real."
+    },
+    "duracao_seg": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Opcional. Duracao alvo do clipe em segundos (ex.: 12). Para formato:imagem nao se aplica."
+    },
+    "continuidade": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Presente APENAS quando o roteiro excedeu o teto de duracao do modelo (ex.: seedance_2_0_mini, 15s) e foi dividido em 2+ jobs que juntos formam UM video so. Ausente no caso normal (um roteiro = um job). Ver RAG/prompts/producao-higgsfield-mcp.md secao de divisao/juncao.",
+      "required": ["parte", "total_partes"],
+      "properties": {
+        "parte": { "type": "integer", "minimum": 1, "description": "Indice 1-based desta parte na sequencia (1 = primeira)." },
+        "total_partes": { "type": "integer", "minimum": 2, "description": "Quantas partes ao todo compoem o video final." },
+        "job_id_parte_anterior": { "type": ["string", "null"], "description": "job_id do generate_video da parte anterior, usado como medias[].role:\"video_references\" (e opcionalmente start_image) nesta geracao, para continuidade visual. null na parte 1." },
+        "estado_final_parte_anterior": { "type": "string", "description": "Descricao curta e concreta de como a parte anterior terminou (pose, cenario, luz, o que a personagem estava fazendo) — a parte atual nasce continuando exatamente daqui, nunca com um gancho novo do zero." }
+      }
+    },
+    "negative_prompt": {
+      "type": "string",
+      "description": "Opcional. Negative curto e targeted (<=15 tokens), mirando artefatos realmente observados, nunca listas genericas estilo SDXL. Modelos Gemini/kling-class degradam com negatives longos."
+    },
+    "audio": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Opcional, so faz sentido quando formato:\"video\". Locucao cronometrada por beat e voz escolhida.",
+      "properties": {
+        "voz_id": {
+          "type": "string",
+          "description": "Opcional. Id da voz Higgsfield (gerada via create_voice) usada na locucao."
+        },
+        "locucao": {
+          "type": "array",
+          "description": "Falas cronometradas, uma entrada por beat de audio.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["inicio_seg", "fim_seg", "texto", "beat"],
+            "properties": {
+              "inicio_seg": { "type": "number", "minimum": 0 },
+              "fim_seg": { "type": "number", "minimum": 0 },
+              "texto": { "type": "string", "minLength": 1, "description": "SEMPRE em portugues (regra forte) — so a direcao tecnica do prompt fica em ingles." },
+              "beat": { "type": "string", "minLength": 1, "description": "Beat narrativo ao qual a fala pertence (ex.: 'gancho', 'cta')." }
+            }
+          }
+        }
+      }
+    },
+    "shots": {
+      "type": "array",
+      "minItems": 1,
+      "description": "A decupagem ESTRUTURADA que os gates leem (angle-variety, narrative, dp-quality, persona-carry). Coerente com a prosa do campo prompt: cada shot e uma batida da prosa.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["n", "beat", "descricao", "tamanho_plano", "angulo", "movimento_camera", "mood"],
+        "properties": {
+          "n": { "type": "integer", "minimum": 1 },
+          "beat": { "type": "string", "minLength": 1, "description": "Funcao narrativa do shot (ex.: 'gancho', 'desenvolvimento-1', 'climax', 'cta')." },
+          "descricao": { "type": "string", "minLength": 10, "description": "O que acontece no shot, concreto (sujeito, acao, cenario)." },
+          "tamanho_plano": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Tamanho de plano (wide | medium | close | full | extreme-close | establishing | ...). Lido pelo angle-variety."
+          },
+          "angulo": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Angulo de camera (low | high | eye | over-the-shoulder | dutch | ...). Lido pelo angle-variety."
+          },
+          "movimento_camera": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Um movimento de camera por shot (ex.: 'handheld push-in', 'static hold', 'whip-pan')."
+          },
+          "fala": {
+            "type": "string",
+            "description": "Opcional. Fala/locucao associada a este shot, quando houver audio. SEMPRE em portugues (regra forte) — so a direcao tecnica do prompt fica em ingles."
+          },
+          "mood": { "type": "string", "minLength": 1, "description": "Clima do shot (ex.: 'confident, energetic')." }
+        }
+      }
+    },
+    "prompt": {
+      "type": "string",
+      "minLength": 200,
+      "description": "O PROMPT PROSA MULTISHOT FINAL montado pra enviar no Higgsfield. Prosa rica: estilo/medium, cenas, edicao, mood, direcao de camera, avoid e decupagem cronometrada. A referencia da personagem entra como <<<element_id>>> (o backend reescreve pra @nome). NAO e uma lista de slots — e a prosa que efetivamente vai pro modelo, calibrada contra RAG/prompts/exemplos-prompt-forge.md."
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jotaro.local/schemas/world.schema.json",
+  "title": "Jotaro Jotaro 0.8 world memory",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["project_id", "world_version", "lugares", "continuidade"],
+  "properties": {
+    "project_id": { "type": "string", "minLength": 1 },
+    "world_version": { "type": "string", "minLength": 1 },
+    "lugares": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "nome",
+          "funcao_narrativa",
+          "geografia",
+          "luz_natural",
+          "props_recorrentes",
+          "texturas",
+          "restricoes"
+        ],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "nome": { "type": "string", "minLength": 1 },
+          "funcao_narrativa": { "type": "string", "minLength": 5 },
+          "geografia": { "type": "string", "minLength": 5 },
+          "luz_natural": { "type": "string", "minLength": 5 },
+          "props_recorrentes": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "texturas": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "restricoes": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "scene_block_canonico": { "type": "string", "minLength": 1 },
+          "som_do_lugar": { "type": ["string", "array"] }
+        }
+      }
+    },
+    "continuidade": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["o_que_nao_pode_mudar", "o_que_pode_variar"],
+      "properties": {
+        "o_que_nao_pode_mudar": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "o_que_pode_variar": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "campanha": "mago-nivel100-golden",
+  "cliente": "example-hero",
+  "data": "2026-06-26",
+  "round": 1,
+  "objetivo": "shot-list golden nivel-100: passa TODOS os gates pre-credito (identity, dp, critique, style, structure, narrative, trait-carry, negative). Referencia canonica do que o prompt-smith deve produzir e fixture do interlock.",
+  "tipo_marca": "personagem",
+  "formato": "vertical 9:16 mobile/TikTok",
+  "duracao_total_seg": 24,
+  "modelo": "nano_banana_2 (Higgsfield CLI — generate create, refs via --image, sem Soul)",
+  "referencias_obrigatorias": [
+    "RAG/identidade-visual/mage1.png",
+    "RAG/identidade-visual/mage2.png",
+    "RAG/identidade-visual/mage3.png"
+  ],
+  "anchor_personagem": "Same wizard character from the 3 reference images: short stout elderly mage, long flowing white beard, purple pointed wizard hat with a square gold buckle on the front, purple robe with lime-green trim (parallel yellow-green lines along edges), brown wide belt with square gold buckle, brown rustic boots, wooden twisted staff topped with a glowing purple crystal held in wooden claw. Hyper-casual mobile RPG cartoon style, saturated colors, bold outlines, soft shadows, vertical 9:16 frame.",
+  "cenas": [
+    {
+      "n": 1,
+      "tag": "hook",
+      "fonte": "geracao",
+      "tempo_seg": "0-4",
+      "intencao": "Hook visual no frame 1: a vila esta sob ataque, ameaca revelada",
+      "personagem_visivel": "ausente",
+      "cinematografia": {
+        "film_stock": "stylized mobile-RPG digital cartoon",
+        "lente": "35mm equivalent wide-to-medium",
+        "grade_cor": "saturated purple-and-gold grade, lifted blacks 3-8%, controlled highlights, warm amber shadows",
+        "grao": "subtle stylized grain overlay, low intensity",
+        "luz": "motivated golden hour side key from camera-left, 5600k, long contact shadows with soft falloff, rim separation",
+        "composicao": "vertical 9:16, central safe-zone middle 60%, negative space top and bottom thirds",
+        "camera": "one motivated slow push-in toward the horde",
+        "cor": "purple-and-gold grade, lifted blacks 3-8%, controlled highlights, warm amber shadows palette",
+        "anti_ia": { "evitar": ["flat frontal light"], "foco": ["contact shadows", "surface texture", "physical weight", "temporal stability"] }
+      },
+      "prompt": "Subject: a horde of stylized fantasy monsters (blue gelatinous slime, small red dragon, green armored goblin with horns, pink toothed worm). Action: advancing toward camera mid-stride with physical weight and inertia, grounded contact shadows under each monster. Environment: medieval cartoon village under attack at golden hour, stone castle tower in background, light smoke on horizon. Composition: wide low-angle establishing shot, vertical 9:16, central safe-zone middle 60%, clean top and bottom reserved. Lighting: motivated golden hour side key from camera-left, 5600k, coherent contact shadows. Camera: 35mm equivalent, one motivated slow push-in. Color: purple-and-gold grade, controlled highlights, warm amber shadows. Rendering: hyper-casual mobile RPG cartoon style matching the 3 reference wizard images, saturated colors, bold outlines, visible surface texture — fabric weave, scuffed leather, wood grain, slime sheen — micro-variation under the light, tactile materials. No wizard in this frame yet, focus on threat reveal in frame 1.",
+      "negative_prompt": "text, watermark, logo",
+      "salvar_em": "output/imagens/cena-01-hook.png"
+    },
+    {
+      "n": 2,
+      "tag": "aparicao",
+      "fonte": "geracao",
+      "tempo_seg": "4-8",
+      "intencao": "Apresenta o personagem em pose heroica grounded",
+      "personagem_visivel": "completo",
+      "cinematografia": {
+        "film_stock": "stylized mobile-RPG digital cartoon",
+        "lente": "35mm equivalent wide-to-medium",
+        "grade_cor": "saturated purple-and-gold grade, lifted blacks 3-8%, controlled highlights, warm amber shadows",
+        "grao": "subtle stylized grain overlay, low intensity",
+        "luz": "motivated golden hour back-rim plus warm side key from camera-left, 5600k, shadows model the beard, soft falloff",
+        "composicao": "vertical 9:16, three-quarter front, subject on central safe-zone middle 60%",
+        "camera": "one motivated arc move around the hero",
+        "cor": "purple-and-gold grade, lifted blacks 3-8%, controlled highlights, warm amber shadows palette",
+        "anti_ia": { "evitar": ["flat frontal light"], "foco": ["contact shadows", "surface texture", "physical weight", "temporal stability"] }
+      },
+      "prompt": "Subject: same wizard character from the 3 reference images — short stout elderly mage, long white beard, purple pointed hat with gold buckle, purple robe with lime-green trim, brown belt, wooden staff with purple crystal. Action: dynamic hero pose with grounded physical weight, both boots planted, contact shadows anchoring him, cape flowing with believable inertia. Environment: forest path with distant stone castle tower at golden hour, faint purple glow starting on staff crystal. Composition: three-quarter front view, vertical 9:16, subject on central safe-zone middle 60%, clean top and bottom. Lighting: motivated golden hour back-rim plus warm side key from camera-left, coherent shadows. Camera: 35mm equivalent, one motivated tracking arc. Color: purple-and-gold grade, controlled highlights, warm amber shadows. Rendering: mobile cartoon RPG style, saturated colors, bold outlines, visible surface texture — beard fibers, woven robe fabric, leather scuff, wood grain of the staff, skin pores — micro-variation, tactile materials.",
+      "negative_prompt": "text, watermark",
+      "salvar_em": "output/imagens/cena-02-aparicao.png"
+    },
+    {
+      "n": 3,
+      "tag": "tensao",
+      "fonte": "geracao",
+      "tempo_seg": "8-12",
+      "intencao": "Cria tensao: inimigos avancando, mago em desvantagem aparente",
+      "personagem_visivel": "parcial",
+      "cinematografia": {
+        "film_stock": "stylized mobile-RPG digital cartoon",
+        "lente": "35mm equivalent wide-to-medium",
+        "grade_cor": "saturated purple-and-gold grade, lifted blacks 3-8%, controlled highlights, warm amber shadows",
+        "grao": "subtle stylized grain overlay, low intensity",
+        "luz": "motivated backlight rim from monster glow, 5600k, deep contact shadows, key/fill separation",
+        "composicao": "vertical 9:16, foreground silhouette, central safe-zone middle 60%, depth layers",
+        "camera": "one motivated handheld push, micro-jitter",
+        "cor": "purple-and-gold grade, lifted blacks 3-8%, controlled highlights, cool shadows palette",
+        "anti_ia": { "evitar": ["flat frontal light"], "foco": ["contact shadows", "surface texture", "physical weight", "temporal stability"] }
+      },
+      "prompt": "Subject: same wizard from reference images seen from behind in foreground (purple hat with gold buckle, shoulders of purple robe with lime-green trim, partial staff). Action: monsters — blue slime, armored green goblin with horns, small red dragon — advancing aggressively mid-stride with physical weight and grounded contact shadows. Environment: forest battleground floor, dust particles in air. Composition: low-angle dramatic action shot, vertical 9:16, foreground silhouette, central safe-zone middle 60% with clear depth layers and parallax, clean top and bottom. Lighting: motivated backlight rim from monster glow, camera-left fill, coherent deep shadows. Camera: 35mm equivalent, one motivated handheld push. Color: purple-and-gold grade, controlled highlights, amber and cool shadows. Rendering: mobile cartoon RPG style, saturated colors, visible surface texture — fabric weave, scaled dragon hide, scuffed armor, ground grain — micro-variation, tactile materials.",
+      "negative_prompt": "text, watermark",
+      "salvar_em": "output/imagens/cena-03-tensao.png"
+    },
+    {
+      "n": 4,
+      "tag": "carga",
+      "fonte": "geracao",
+      "tempo_seg": "12-16",
+      "intencao": "Carga da magia, expectativa do disparo",
+      "personagem_visivel": "completo",
+      "cinematografia": {
+        "film_stock": "stylized mobile-RPG digital cartoon",
+        "lente": "35mm equivalent wide-to-medium",
+        "grade_cor": "saturated purple-and-gold grade, lifted blacks 3-8%, controlled highlights, warm amber shadows",
+        "grao": "subtle stylized grain overlay, low intensity",
+        "luz": "motivated purple-magenta backlight from crystal, 5600k, warm amber side spill on beard, contact shadows",
+        "composicao": "vertical 9:16, close three-quarter, subject filling central safe-zone middle 60%",
+        "camera": "one motivated slow push-in to the crystal",
+        "cor": "purple-and-gold grade, lifted blacks 3-8%, controlled highlights, warm amber spill palette",
+        "anti_ia": { "evitar": ["flat frontal light"], "foco": ["contact shadows", "surface texture", "physical weight", "temporal stability"] }
+      },
+      "prompt": "Subject: close three-quarter of same wizard from reference images — short elderly mage, long white beard, purple pointed hat with gold buckle, purple robe with lime-green trim. Action: staff raised high with both hands, purple crystal emitting radiant glow, golden sparkle particles gathering with coherent swirling inertia, grounded stance with physical weight and contact shadows. Environment: dark forest background. Composition: close three-quarter, vertical 9:16, subject filling central safe-zone middle 60%, clean top and bottom. Lighting: motivated purple-magenta backlight from the crystal, warm amber side spill on beard edges from camera-left, coherent shadows. Camera: 35mm equivalent, one motivated slow push-in. Color: purple-and-gold grade, controlled highlights, warm amber shadows. Rendering: mobile cartoon RPG style, saturated purple magic glow with controlled highlights, visible surface texture — beard fibers, robe fabric, wood grain of the staff, skin pores — micro-variation, tactile materials.",
+      "negative_prompt": "text, watermark",
+      "salvar_em": "output/imagens/cena-04-carga.png"
+    },
+    {
+      "n": 5,
+      "tag": "impacto",
+      "fonte": "geracao",
+      "tempo_seg": "16-20",
+      "intencao": "Payoff: o feitico explode e varre os inimigos (climax ~70%)",
+      "personagem_visivel": "completo",
+      "cinematografia": {
+        "film_stock": "stylized mobile-RPG digital cartoon",
+        "lente": "35mm equivalent wide-to-medium",
+        "grade_cor": "saturated purple-and-gold grade, lifted blacks 3-8%, controlled highlights, warm amber shadows",
+        "grao": "subtle stylized grain overlay, low intensity",
+        "luz": "motivated vortex purple key, 5600k, casting light and contact shadows on the ground, rim separation",
+        "composicao": "vertical 9:16, wide action, subject left third, central safe-zone middle 60%",
+        "camera": "one motivated whip pan following the blast",
+        "cor": "purple-and-gold grade, lifted blacks 3-8%, controlled highlights, magenta and amber palette",
+        "anti_ia": { "evitar": ["flat frontal light"], "foco": ["contact shadows", "surface texture", "physical weight", "temporal stability"] }
+      },
+      "prompt": "Subject: same wizard from reference images mid-cast, both hands outstretched forward, staff in left hand. Action: massive purple-magenta magical vortex erupting from his hands with coherent energy inertia; monsters (blue slime, green armored goblin, small red dragon) swept backward through the air with physical weight, impact effects and motion-blur lines, grounded contact shadows where the vortex light hits the floor. Environment: forest battleground. Composition: wide action shot, vertical 9:16, subject on left third, central safe-zone middle 60%, depth layers, clean top and bottom. Lighting: motivated vortex purple key from camera-left, coherent ground contact shadows. Camera: 35mm equivalent, one motivated whip pan following the blast. Color: purple-and-gold grade, controlled highlights, magenta and amber. Rendering: mobile cartoon RPG style, intense purple and gold palette with controlled highlight bloom, visible surface texture — fabric, scuffed armor, scaled hide, ground grain — micro-variation, tactile materials.",
+      "negative_prompt": "text, watermark",
+      "salvar_em": "output/imagens/cena-05-impacto.png"
+    },
+    {
+      "n": 6,
+      "tag": "cta-clean",
+      "fonte": "geracao",
+      "tempo_seg": "20-24",
+      "intencao": "Hero pose final limpa, fechamento e CTA (texto queimado via FFmpeg depois)",
+      "personagem_visivel": "completo",
+      "cinematografia": {
+        "film_stock": "stylized mobile-RPG digital cartoon",
+        "lente": "35mm equivalent wide-to-medium",
+        "grade_cor": "saturated purple-and-gold grade, lifted blacks 3-8%, controlled highlights, warm amber shadows",
+        "grao": "subtle stylized grain overlay, low intensity",
+        "luz": "motivated sunrise warm key from camera-left, 5600k, soft fill, gentle contact shadows",
+        "composicao": "vertical 9:16, full-body central safe-zone middle 60%, negative space top and bottom thirds",
+        "camera": "one motivated slow crane up to the hero",
+        "cor": "purple-and-gold grade, lifted blacks 3-8%, controlled highlights, warm amber sunrise palette",
+        "anti_ia": { "evitar": ["flat frontal light"], "foco": ["contact shadows", "surface texture", "physical weight", "temporal stability"] }
+      },
+      "prompt": "Subject: same wizard from reference images standing tall facing camera, full body visible, staff planted on the ground beside him with purple crystal glowing softly. Action: victorious grounded hero pose with physical weight, boots planted, contact shadows anchoring him, gentle wind giving the cape believable inertia. Environment: saved medieval village and intact stone castle, sunrise sky with warm orange-pink gradient, defeated monsters faintly visible far in the distance. Composition: full-body central, vertical 9:16, central safe-zone middle 60%, deliberate clean top and bottom for later text overlay. Lighting: motivated sunrise warm key from camera-left with soft fill, coherent gentle contact shadows. Camera: 35mm equivalent, one motivated slow crane up. Color: purple-and-gold grade, controlled highlights, warm amber sunrise. Rendering: mobile cartoon RPG style, saturated colors, bold outlines, visible surface texture — beard fibers, woven fabric, leather scuff, wood grain, skin pores — micro-variation, tactile materials. No text overlay, no logo, no UI, clean hero shot with reserved space for the CTA.",
+      "negative_prompt": "text, watermark, logo",
+      "salvar_em": "output/imagens/cena-06-cta-clean.png"
+    }
+  ],
+  "gate_consistencia": {
+    "criterio": "personagem reconhecivelmente o mesmo em quantas das 6 cenas (chapeu+barba+robe+staff preservados)",
+    "passa": "6/6 ou 5/6",
+    "regerar_cenas_falhas": "4/6 ou 3/6 - regerar apenas as cenas falhas com prompt mais especifico e as mesmas referencias",
+    "pausar_para_revisao": "menos de 3/6 - pausar, revisar anchor/referencias com o usuario e nao gastar mais credito no escuro"
+  }
+}

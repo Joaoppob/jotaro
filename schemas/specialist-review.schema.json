@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jotaro.local/schemas/specialist-review.schema.json",
+  "title": "Jotaro Jotaro 0.8 specialist review",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "stage",
+    "generation_id",
+    "ok",
+    "motivo",
+    "draft_revisado",
+    "campos_alterados",
+    "scene_audits",
+    "riscos",
+    "handoff"
+  ],
+  "properties": {
+    "stage": {
+      "type": "string",
+      "enum": ["historia", "mundo", "enredo", "camera", "montagem", "realismo", "audio"]
+    },
+    "generation_id": { "type": "string", "minLength": 10 },
+    "input_hash": { "type": "string" },
+    "output_hash": { "type": "string" },
+    "ok": { "type": "boolean" },
+    "motivo": { "type": "string", "minLength": 10 },
+    "ajuste_aplicado": { "type": "boolean" },
+    "campos_alterados": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "draft_revisado": { "type": "string", "minLength": 1 },
+    "draft_revisado_path": { "type": "string" },
+    "scene_audits": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["cena_id", "ok", "motivo", "campos_alterados", "riscos"],
+        "properties": {
+          "cena_id": { "type": "string", "minLength": 1 },
+          "ok": { "type": "boolean" },
+          "motivo": { "type": "string", "minLength": 10 },
+          "campos_alterados": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "riscos": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["descricao", "severidade"],
+              "properties": {
+                "descricao": { "type": "string" },
+                "severidade": { "type": "string", "enum": ["baixo", "medio", "alto"] }
+              }
+            }
+          }
+        }
+      }
+    },
+    "riscos": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["descricao", "severidade"],
+        "properties": {
+          "descricao": { "type": "string" },
+          "severidade": { "type": "string", "enum": ["baixo", "medio", "alto"] }
+        }
+      }
+    },
+    "handoff": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["proxima_etapa", "observacoes"],
+      "properties": {
+        "proxima_etapa": { "type": "string" },
+        "observacoes": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "project_id": "",
+  "generation_id": "",
+  "objetivo": "awareness",
+  "metrica_primaria": "hook_rate",
+  "nivel_awareness": "fria",
+  "single_minded_proposition": "",
+  "o_que_comunica": "",
+  "metodo_comunicacao": "",
+  "como_comunica": "",
+  "publico": "",
+  "canal": "reels",
+  "formato": "video",
+  "estetica": "ugc-native",
+  "time_budget": {
+    "hook": "0-2s",
+    "desenvolvimento": "2-12s",
+    "payoff_cta": "12-15s"
+  },
+  "restricoes": [],
+  "provas_permitidas": [],
+  "nao_fazer": []
+}

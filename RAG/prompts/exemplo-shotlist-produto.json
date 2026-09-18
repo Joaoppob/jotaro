@@ -1,0 +1,59 @@
+{
+  "campanha": "produto-premium-demo",
+  "cliente": "marca-produto-exemplo",
+  "data": "2026-06-17",
+  "round": 1,
+  "objetivo": "exemplo de shot-list para produto fisico com detalhe e lifestyle",
+  "tipo_marca": "produto",
+  "formato": "vertical 9:16 mobile/TikTok",
+  "duracao_total_seg": 16,
+  "modelo": "nano_banana_2 (Higgsfield CLI - generate create, refs via --image, sem Soul)",
+  "referencias_obrigatorias": [
+    "RAG/identidade-visual/produto1.png"
+  ],
+  "anchor_personagem": "Same premium product from the reference images: compact matte black bottle, copper metallic cap, minimal white label, rounded shoulders, soft studio reflections. Premium lifestyle product photography style, warm neutral palette, vertical 9:16 frame.",
+  "cenas": [
+    {
+      "n": 1,
+      "tag": "hook-problema",
+      "tempo_seg": "0-4",
+      "intencao": "Mostrar o problema antes do produto",
+      "personagem_visivel": "ausente",
+      "prompt": "Premium lifestyle product ad style, vertical 9:16 frame. Close shot of a cluttered bathroom counter at warm morning light, ordinary bottles scattered, visual tension and lack of focus, no readable text, no logo, clean side shadows from a window on frame left.",
+      "salvar_em": "output/imagens/produto-cena-01-hook.png"
+    },
+    {
+      "n": 2,
+      "tag": "produto-hero",
+      "tempo_seg": "4-8",
+      "intencao": "Apresentar o produto como solucao",
+      "personagem_visivel": "completo",
+      "prompt": "Centered hero product shot. Same premium product from the reference images: compact matte black bottle, copper metallic cap, minimal white label, rounded shoulders, soft studio reflections. Warm neutral background, premium lifestyle product photography style, vertical 9:16 frame.",
+      "salvar_em": "output/imagens/produto-cena-02-hero.png"
+    },
+    {
+      "n": 3,
+      "tag": "detalhe",
+      "tempo_seg": "8-12",
+      "intencao": "Destacar textura e acabamento",
+      "personagem_visivel": "completo",
+      "prompt": "Macro detail shot of the same premium product from the reference images, copper metallic cap catching warm light, matte black surface with subtle texture, shallow depth of field, premium lifestyle product photography style, warm neutral palette, vertical 9:16 frame.",
+      "salvar_em": "output/imagens/produto-cena-03-detalhe.png"
+    },
+    {
+      "n": 4,
+      "tag": "cta-clean",
+      "tempo_seg": "12-16",
+      "intencao": "Fechamento limpo com espaco para chamada",
+      "personagem_visivel": "completo",
+      "prompt": "Final clean composition, same premium product from the reference images: compact matte black bottle, copper metallic cap, minimal white label, rounded shoulders, centered on a warm stone surface, soft morning light, uncluttered background, empty space at top and bottom for later text overlay, no text, no logo, no UI. Premium lifestyle product photography style, vertical 9:16 frame.",
+      "salvar_em": "output/imagens/produto-cena-04-cta.png"
+    }
+  ],
+  "gate_consistencia": {
+    "criterio": "produto reconhecivelmente o mesmo em todas as cenas",
+    "passa": "4/4 ou 3/4",
+    "regerar_cenas_falhas": "2/4 - regerar apenas as cenas falhas com prompt mais especifico e as mesmas referencias",
+    "pausar_para_revisao": "menos de 2/4 - pausar, revisar anchor/referencias com o usuario e nao gastar mais credito no escuro"
+  }
+}

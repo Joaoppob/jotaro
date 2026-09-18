@@ -1,0 +1,84 @@
+{
+  "campanha": "trio-curadoria-biblioteca-exemplo",
+  "cliente": "marca-ficticia-trio",
+  "plataforma": "tiktok",
+  "formato": "vertical 9:16",
+  "n_cenas": 3,
+  "cenas": [
+    {
+      "n": 1,
+      "beat_narrativo": "gancho",
+      "descricao_visual": "Nina abre o reel com o produto na mesa do cafe, clima acolhedor e luz quente.",
+      "mood": "acolhedor, convidativo",
+      "duracao_seg": 4,
+      "personagem_presente": "completo",
+      "personagem": "nina",
+      "fonte": "biblioteca",
+      "asset_path": "RAG/identidade-visual/nina/zoe_05_cafe_artesanal.png",
+      "cena_brief": {
+        "cena_id": "cena-1",
+        "objetivo": "abrir com acolhimento e produto no cotidiano",
+        "o_que_comunica": "O produto faz parte dos momentos reais de quem voce admira.",
+        "metodo_comunicacao": "cena de mesa de cafe intima com a personagem e o produto como coadjuvante natural",
+        "como_comunica": "luz quente, close no rosto e produto na mesa, fundo desfocado de cafeteria",
+        "arco": {
+          "inicio": "Nina na mesa, produto discreto ao lado",
+          "meio": "clima acolhedor se estabelece",
+          "fim": "produto integrado ao ritual sem parecer anuncio"
+        },
+        "sobrevive_sozinha": true,
+        "motivo_teste_vampiro": "A cena tem personagem, cenario, produto e tom proprio; funciona como still de lifestyle."
+      }
+    },
+    {
+      "n": 2,
+      "beat_narrativo": "desenvolvimento-1",
+      "descricao_visual": "Lea no estudio mostra o produto em uso, energia criativa e cores fortes.",
+      "mood": "criativo, energetico",
+      "duracao_seg": 4,
+      "personagem_presente": "completo",
+      "personagem": "lea",
+      "fonte": "biblioteca",
+      "asset_path": "RAG/identidade-visual/lea/ana_03_estudio.png",
+      "cena_brief": {
+        "cena_id": "cena-2",
+        "objetivo": "mudar o ritmo com energia criativa e mostrar o produto em acao",
+        "o_que_comunica": "O produto cabe em qualquer rotina — da calma do cafe a energia do estudio.",
+        "metodo_comunicacao": "contraste de ambiente e personagem mantendo o produto como fio condutor",
+        "como_comunica": "cores fortes, fundo de estudio, produto em primeiro plano com a personagem usando",
+        "arco": {
+          "inicio": "Lea no estudio, produto em destaque",
+          "meio": "energia criativa contrasta com a cena anterior",
+          "fim": "produto como ferramenta de criacao, nao so consumo"
+        },
+        "sobrevive_sozinha": true,
+        "motivo_teste_vampiro": "A cena tem identidade visual propria (cores, ambiente, personagem) e o produto em uso ativo."
+      }
+    },
+    {
+      "n": 3,
+      "beat_narrativo": "cta",
+      "descricao_visual": "Duda fecha o reel na rua segurando o produto, convite final limpo com espaco para CTA.",
+      "mood": "confiante, convite final",
+      "duracao_seg": 4,
+      "personagem_presente": "completo",
+      "personagem": "duda",
+      "fonte": "biblioteca",
+      "asset_path": "RAG/identidade-visual/duda/mia_07_rua.png",
+      "cena_brief": {
+        "cena_id": "cena-3",
+        "objetivo": "fechar com confianca e convite direto ao CTA",
+        "o_que_comunica": "Tres pessoas reais usam. Voce tambem pode.",
+        "metodo_comunicacao": "fechamento com personagem na rua, produto em destaque e composicao limpa para CTA",
+        "como_comunica": "luz natural, fundo urbano, produto erguido pela personagem, espaco vazio para texto",
+        "arco": {
+          "inicio": "Duda na rua com o produto",
+          "meio": "pose confiante, produto no centro do quadro",
+          "fim": "convite visual limpo sem elementos de UI competindo"
+        },
+        "sobrevive_sozinha": true,
+        "motivo_teste_vampiro": "Funciona como anuncio standalone: personagem + produto + call-to-action visual claro."
+      }
+    }
+  ]
+}

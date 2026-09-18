@@ -1,0 +1,13 @@
+{
+  "name": "jotaro-video-generator",
+  "version": "0.8.0-alpha.1",
+  "private": true,
+  "description": "Claude Code product for video/image ad generation — Jotaro 0.8 project-director flow generating via Higgsfield (MCP-first).",
+  "scripts": {
+    "test": "node scripts/verify.cjs",
+    "verify": "node scripts/verify.cjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

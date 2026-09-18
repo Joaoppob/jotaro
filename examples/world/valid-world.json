@@ -1,0 +1,22 @@
+{
+  "project_id": "ExampleBrand",
+  "world_version": "2026-07-03",
+  "lugares": [
+    {
+      "id": "academia-duda",
+      "nome": "Academia da Duda",
+      "funcao_narrativa": "onde rotina, disciplina e energia aparecem sem parecer propaganda",
+      "geografia": "academia compacta, espelhos laterais, area de pesos livres e corredor estreito",
+      "luz_natural": "luz de fim de tarde entrando por janelas altas, sombras suaves no piso",
+      "props_recorrentes": ["garrafa translúcida", "toalha clara", "barras energéticas na mochila"],
+      "texturas": ["borracha preta do piso", "metal escovado", "embalagem brilhante"],
+      "restricoes": ["nao mudar para estudio branco", "nao transformar a academia em palco"],
+      "scene_block_canonico": "SCENE: academia compacta da Duda, fim de tarde. SET: espelhos laterais, area de pesos livres, corredor estreito, barras energéticas sobre o banco. LIGHT: luz de janelas altas camera-left, fim de tarde, quente e difusa, sombras suaves no piso de borracha preta.",
+      "som_do_lugar": "zumbido de academia, musica eletronica baixa, tenis rangendo no tatame, peso de metal batendo ao longe"
+    }
+  ],
+  "continuidade": {
+    "o_que_nao_pode_mudar": ["academia compacta", "produto sempre reconhecivel", "luz natural lateral"],
+    "o_que_pode_variar": ["aparelho usado", "posicao da camera", "intensidade do suor"]
+  }
+}

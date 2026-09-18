@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jotaro.local/schemas/pipeline-state.schema.json",
+  "title": "Jotaro pipeline state",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["versao", "criado_em", "atualizado_em", "cenas", "refs_media"],
+  "properties": {
+    "versao": { "type": "integer", "const": 1 },
+    "criado_em": { "type": "string" },
+    "atualizado_em": { "type": "string" },
+    "project_id": { "type": "string" },
+    "generation_id": { "type": "string" },
+    "generation_root": { "type": "string" },
+    "stage": {
+      "type": "string",
+      "enum": ["created", "drafting", "approved", "producing", "rendered", "critiqued", "archived"]
+    },
+    "invalidated_after": { "type": ["string", "null"] },
+    "history": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "cenas": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "imagem": { "$ref": "#/$defs/artifact" },
+          "video": { "$ref": "#/$defs/artifact" }
+        }
+      }
+    },
+    "refs_media": {
+      "type": "object",
+      "additionalProperties": { "type": "string", "minLength": 1 }
+    }
+  },
+  "$defs": {
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["job_id", "path", "media_ids", "prompt_tag", "gravado_em"],
+      "properties": {
+        "job_id": { "type": ["string", "null"] },
+        "path": { "type": ["string", "null"] },
+        "media_ids": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "prompt_tag": { "type": ["string", "null"] },
+        "gravado_em": { "type": "string" }
+      }
+    }
+  }
+}

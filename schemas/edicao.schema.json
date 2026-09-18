@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jotaro.local/schemas/edicao.schema.json",
+  "title": "Jotaro artefato de edicao contract",
+  "description": "Artefato de ritmo de corte do editing-director: nomeia o estilo de corte, as transicoes/match-cuts e o pacing por secao coerente com as cenas. E a camada de Editing style que faltava no forjador de prompt.",
+  "type": "object",
+  "required": ["personagem", "estilo_corte", "transicoes", "ritmo_por_secao", "match_cuts", "justificativa"],
+  "properties": {
+    "personagem": { "type": "string" },
+    "estilo_corte": { "type": "string", "description": "estilo de corte concreto (ex.: 'fast-cut TikTok', 'corte contemplativo lento'); nunca termo-vago sozinho" },
+    "transicoes": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" }
+    },
+    "ritmo_por_secao": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["secao", "pacing", "planos_distintos"],
+        "properties": {
+          "secao": { "type": "string" },
+          "pacing": { "type": "string" },
+          "planos_distintos": { "type": "integer", "minimum": 1 }
+        }
+      }
+    },
+    "match_cuts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["de", "para"],
+        "properties": {
+          "de": { "type": "string" },
+          "para": { "type": "string" }
+        }
+      }
+    },
+    "justificativa": { "type": "string" }
+  }
+}

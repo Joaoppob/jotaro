@@ -1,0 +1,61 @@
+{
+  "campanha": "example-brand-trio-lancamento",
+  "cliente": "example-brand",
+  "data": "2026-01-10",
+  "round": 1,
+  "objetivo": "Demo multi-personagem asset-first: reel do trio Zara/Theo/Ivy montado por SELECAO da biblioteca (custo de imagem 0). Mostra o caminho biblioteca + o dossie de persona por personagem. Conteudo fictício escrito do zero para este repositório público.",
+  "tipo_marca": "personagem",
+  "formato": "vertical 9:16 mobile/TikTok",
+  "duracao_total_seg": 12,
+  "modelo": "nano_banana_2 (modo biblioteca: selecao de asset, sem gerar)",
+  "referencias_obrigatorias": [
+    "RAG/identidade-visual/zara/zara_01.png",
+    "RAG/identidade-visual/theo/theo_01.png",
+    "RAG/identidade-visual/ivy/ivy_01.png"
+  ],
+  "anchor_personagem": "Trio ExampleBrand: Zara (escaladora urbana destemida), Theo (ceramista de ateliê quieto), Ivy (florista de bairro animada). Cada personagem tem sua biblioteca propria em RAG/identidade-visual/<personagem>/ e seu dossie em RAG/personas/<personagem>.md.",
+  "personas": {
+    "zara": { "personalidade": "destemida competitiva direta disciplinada engracada", "mundo": "escaladora urbana amanhecer concreto", "voz": "curta confiante giria de esporte" },
+    "theo": { "personalidade": "quieto meticuloso paciente observador gentil", "mundo": "ceramista atelie roda de oleiro argila", "voz": "baixa pausada poucas palavras" },
+    "ivy": { "personalidade": "generosa animada acolhedora espontanea faladora", "mundo": "florista bairro loja colorida manha de feira", "voz": "calorosa rapida" }
+  },
+  "cenas": [
+    {
+      "n": 1,
+      "tag": "hook",
+      "fonte": "biblioteca",
+      "personagem": "zara",
+      "personagem_visivel": "completo",
+      "tempo_seg": "0-4",
+      "intencao": "Zara abre o reel com energia destemida na parede de escalada",
+      "asset_path": "RAG/identidade-visual/zara/zara_01.png",
+      "salvar_em": "output/imagens/cena-01-zara.png"
+    },
+    {
+      "n": 2,
+      "tag": "desenvolvimento",
+      "fonte": "biblioteca",
+      "personagem": "theo",
+      "personagem_visivel": "completo",
+      "tempo_seg": "4-8",
+      "intencao": "Theo mostra o lado meticuloso no ateliê de ceramica",
+      "asset_path": "RAG/identidade-visual/theo/theo_01.png",
+      "salvar_em": "output/imagens/cena-02-theo.png"
+    },
+    {
+      "n": 3,
+      "tag": "cta",
+      "fonte": "biblioteca",
+      "personagem": "ivy",
+      "personagem_visivel": "completo",
+      "tempo_seg": "8-12",
+      "intencao": "Ivy fecha animada e acolhedora, convite final com espaco pro CTA",
+      "asset_path": "RAG/identidade-visual/ivy/ivy_01.png",
+      "salvar_em": "output/imagens/cena-03-ivy.png"
+    }
+  ],
+  "gate_consistencia": {
+    "criterio": "cada personagem reconhecivelmente o mesmo asset da sua biblioteca",
+    "passa": "3/3 — selecao da biblioteca, consistencia perfeita por construcao"
+  }
+}

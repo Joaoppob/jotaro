@@ -1,0 +1,26 @@
+{
+  "personagem": "Nina",
+  "plataforma": "reels",
+  "verdade_emocional": {
+    "desejo": "o peso de dias que começam difíceis",
+    "obstaculo": "a parede do perfeccionismo — querer dar conta de tudo sozinha",
+    "virada": "lembrar de ir no próprio tempo",
+    "respiro": "quando ela pousa, o resto se acomoda"
+  },
+  "locucao": [
+    { "inicio_seg": 0, "fim_seg": 2.6, "texto": "tem dias que começam pesados", "beat": 1 },
+    { "inicio_seg": 2.6, "fim_seg": 5, "texto": "e eu só queria dar conta de tudo", "beat": 2 },
+    { "inicio_seg": 5, "fim_seg": 8, "texto": "aí eu lembro de ir no meu tempo", "beat": 3 },
+    { "inicio_seg": 8, "fim_seg": 11, "texto": "e o resto encaixa", "beat": 4 }
+  ],
+  "estrategia_render": [
+    { "beat": 1, "modo": "movimento", "justificativa": "gancho: ela já está em ação — organizando a mesa, começando a rotina — no exato instante em que diz a locução; ação + fala juntas, nunca frame parado e mudo (regra do gancho, RAG/prompts/hooks-de-movimento.md)" },
+    { "beat": 2, "modo": "hard-still", "justificativa": "o obstáculo interno sustenta em still; a tensão é da personagem, não da câmera — orçamento de movimento dos beats 2-4 já respeitado pelo beat 1 (fora da conta)" },
+    { "beat": 3, "modo": "movimento", "justificativa": "push-in lento na virada, sincroniza com a locução — único movimento entre os beats 2-4" },
+    { "beat": 4, "modo": "hard-still", "justificativa": "respiro final em still — o resto se acomoda, a câmera também" }
+  ],
+  "guarda_regulatoria": {
+    "produto_nao_inicia": true, "sem_pack_shot": true, "produto_nao_a_camera": true,
+    "sem_desfecho_funcional": true, "produto_como_aliado": true
+  }
+}

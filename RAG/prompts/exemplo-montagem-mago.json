@@ -1,0 +1,37 @@
+{
+  "campanha": "mago-magia-cta-baixar-agora",
+  "cliente": "example-hero",
+  "formato": "vertical 9:16",
+  "duracao_total_seg": 24,
+  "ordem_cenas": [
+    {
+      "n": 1,
+      "funcao": "hook",
+      "tempo_seg": "0-4",
+      "informacao_nova": "A vila ja esta sob ataque no primeiro frame."
+    },
+    {
+      "n": 5,
+      "funcao": "payoff",
+      "tempo_seg": "16-20",
+      "informacao_nova": "A magia vira o conflito perto de setenta por cento do reel."
+    }
+  ],
+  "captions": [
+    {
+      "cena": 1,
+      "texto": "A vila caiu.",
+      "posicao": "centro"
+    },
+    {
+      "cena": 5,
+      "texto": "Uma magia muda tudo.",
+      "posicao": "centro"
+    }
+  ],
+  "ritmo": {
+    "frame_1": "Sem fade, sem logo: a primeira imagem ja carrega a ameaca.",
+    "payoff_percentual": 70,
+    "regra_corte": "Cada corte precisa acrescentar nova informacao visual ou emocional."
+  }
+}

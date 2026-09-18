@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jotaro.local/schemas/roteiro.schema.json",
+  "title": "Jotaro roteiro contract",
+  "type": "object",
+  "required": ["titulo", "gancho", "desenvolvimento", "cta", "plataforma", "tom"],
+  "properties": {
+    "titulo": { "type": "string" },
+    "gancho": { "type": "string", "description": "Primeira frase ou imagem. O que prende em ~1s inicial (a primeira frame carrega sozinha)." },
+    "desenvolvimento": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["beat", "descricao"],
+        "properties": {
+          "beat": { "type": "integer" },
+          "descricao": { "type": "string" }
+        }
+      }
+    },
+    "cta": { "type": "string", "description": "Fala real da personagem, dita em cena, em primeira pessoa (nunca um card de texto/CTA generico separado da acao). Nunca menciona capitulo, parte, episodio, temporada ou qualquer termo que revele estrutura serializada ao espectador, mesmo quando o roteiro e capitulo de um arco continuo." },
+    "plataforma": { "type": "string" },
+    "duracao_alvo_seg": { "type": "integer" },
+    "tom": { "type": "string" },
+    "referencias_usadas": { "type": "array", "items": { "type": "string" } }
+  }
+}

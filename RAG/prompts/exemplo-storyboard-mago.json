@@ -1,0 +1,141 @@
+{
+  "campanha": "mago-magia-cta-baixar-agora",
+  "cliente": "example-hero",
+  "plataforma": "tiktok",
+  "formato": "vertical 9:16",
+  "n_cenas": 6,
+  "cenas": [
+    {
+      "n": 1,
+      "beat_narrativo": "gancho",
+      "descricao_visual": "Plano aberto em contra-plongee da vila medieval cartoon sob ataque na hora dourada. Uma horda de monstros estilizados avanca em direcao a camera: slime azul gelatinoso, pequeno dragao vermelho, goblin verde armado com chifres, verme rosa dentado. Torre de castelo de pedra ao fundo, fumaca leve no horizonte. O mago ainda nao aparece: o foco e a ameaca.",
+      "mood": "tenso, ameacador, urgente",
+      "duracao_seg": 4,
+      "personagem_presente": "ausente",
+      "cena_brief": {
+        "cena_id": "cena-1",
+        "objetivo": "estabelecer ameaca iminente e mundo em perigo",
+        "o_que_comunica": "A vila esta sob ataque de monstros e precisa de um heroi.",
+        "metodo_comunicacao": "world-building atraves de plano aberto com escala de horda e ausencia do heroi",
+        "como_comunica": "contra-plongee, luz quente de hora dourada, composicao que empurra o olhar para o castelo",
+        "arco": {
+          "inicio": "vila pacifica e ameacada",
+          "meio": "horda avanca implacavelmente",
+          "fim": "situacao aparentemente perdida antes da entrada do mago"
+        },
+        "sobrevive_sozinha": true,
+        "motivo_teste_vampiro": "A ameaca e clara, o cenario e rico e a ausencia do heroi cria expectativa mesmo sem o resto do reel."
+      }
+    },
+    {
+      "n": 2,
+      "beat_narrativo": "desenvolvimento-1",
+      "descricao_visual": "O mago surge em pose heroica, vista de tres-quartos de frente, capa esvoacante ao vento. Caminho de floresta ao fundo com a torre de pedra distante, iluminacao de hora dourada, um leve brilho roxo comecando a despontar no cristal do cajado.",
+      "mood": "heroico, esperanca surgindo",
+      "duracao_seg": 4,
+      "personagem_presente": "completo",
+      "cena_brief": {
+        "cena_id": "cena-2",
+        "objetivo": "apresentar o mago como heroi e nucleo de esperanca",
+        "o_que_comunica": "O mago e a unica defesa da vila e esta pronto para lutar.",
+        "metodo_comunicacao": "apresentacao heroica em pose classica, com contraste entre capa escura e cristal brilhante",
+        "como_comunica": "tres-quartos de frente, vento na capa, luz dourada e brilho roxo despontando",
+        "arco": {
+          "inicio": "mago entra em quadro com pose de chegada",
+          "meio": "capa esvoaca, cristal comeca a carregar",
+          "fim": "mago estabelecido como heroi diante da ameaca"
+        },
+        "sobrevive_sozinha": true,
+        "motivo_teste_vampiro": "A cena define personagem, poder e stakes visuais sem depender da cena anterior."
+      }
+    },
+    {
+      "n": 3,
+      "beat_narrativo": "desenvolvimento-2",
+      "descricao_visual": "Plano de acao dramatico em contra-plongee. O mago aparece de costas em primeiro plano (chapeu e ombros visiveis, vista parcial do cajado). De frente para a camera, os inimigos avancam agressivamente a meio-passo: slime azul, goblin verde armado com chifres, pequeno dragao vermelho. Chao de batalha na floresta, particulas de poeira no ar, contraluz dramatica.",
+      "mood": "tensao maxima, desvantagem aparente",
+      "duracao_seg": 4,
+      "personagem_presente": "parcial",
+      "cena_brief": {
+        "cena_id": "cena-3",
+        "objetivo": "intensificar a ameaca e criar tensao antes do clímax",
+        "o_que_comunica": "A batalha esta prestes a acontecer e o mago esta em desvantagem numerica.",
+        "metodo_comunicacao": "contra-plongee dramatico com o mago de costas como ancora e inimigos avancando frontalmente",
+        "como_comunica": "contraluz dramatica, particulas de poeira, inimigos a meio-passo criando iminencia",
+        "arco": {
+          "inicio": "mago posicionado entre a camera e os inimigos",
+          "meio": "inimigos avancam, poeira sobe, tensao cresce",
+          "fim": "momento congelado de maxima desvantagem antes da virada"
+        },
+        "sobrevive_sozinha": true,
+        "motivo_teste_vampiro": "A cena comunica tensao, escala e desvantagem com clareza visual mesmo sem as cenas adjacentes."
+      }
+    },
+    {
+      "n": 4,
+      "beat_narrativo": "desenvolvimento-3",
+      "descricao_visual": "Close em tres-quartos do mago carregando a magia. Cajado erguido bem acima da cabeca com as duas maos, cristal roxo no topo emitindo um brilho radiante intenso, particulas douradas reunindo-se e girando ao redor do cristal. Olhos do mago brilhando em ambar fraco, boca entoando o feitico, capa ondulando dramaticamente. Fundo de floresta escura, contraluz roxo-magenta.",
+      "mood": "expectativa, carga de poder",
+      "duracao_seg": 4,
+      "personagem_presente": "completo",
+      "cena_brief": {
+        "cena_id": "cena-4",
+        "objetivo": "construir antecipacao e carga de poder antes do disparo",
+        "o_que_comunica": "O mago esta reunindo todo o seu poder para um ataque devastador.",
+        "metodo_comunicacao": "escalada visual gradual: close crescente, brilho do cristal intensificando, particulas girando",
+        "como_comunica": "close em tres-quartos, brilho roxo radiante, particulas douradas, contraluz magenta",
+        "arco": {
+          "inicio": "mago comeca a concentrar energia no cristal",
+          "meio": "brilho intensifica, particulas giram mais rapido",
+          "fim": "poder atinge pico maximo, pronto para liberar"
+        },
+        "sobrevive_sozinha": true,
+        "motivo_teste_vampiro": "A cena tem progressao visual propria (carga crescente) e climax interno antes do disparo."
+      }
+    },
+    {
+      "n": 5,
+      "beat_narrativo": "climax",
+      "descricao_visual": "Plano aberto de acao. O mago no meio do disparo, as duas maos estendidas para frente, um vortice magico roxo-magenta gigantesco irrompendo das maos, particulas douradas e raios de energia magenta girando. Os monstros (slime azul, goblin verde armado, pequeno dragao vermelho) sao arremessados para tras pelo impacto, com efeitos de impacto e linhas de motion blur. Campo de batalha na floresta iluminado de roxo pelo vortice.",
+      "mood": "payoff explosivo, virada de jogo",
+      "duracao_seg": 4,
+      "personagem_presente": "completo",
+      "cena_brief": {
+        "cena_id": "cena-5",
+        "objetivo": "entregar o payoff explosivo da batalha",
+        "o_que_comunica": "O poder do mago e avassalador e a vila esta salva.",
+        "metodo_comunicacao": "explosao visual com vortice magico que preenche o quadro e arremessa inimigos",
+        "como_comunica": "plano aberto, vortice roxo-magenta, motion blur nos inimigos arremessados, campo iluminado de roxo",
+        "arco": {
+          "inicio": "disparo comeca, energia explode das maos",
+          "meio": "vortice atinge pico, inimigos sao arremessados",
+          "fim": "vitoria consumada, campo de batalha iluminado pelo poder magico residual"
+        },
+        "sobrevive_sozinha": true,
+        "motivo_teste_vampiro": "A cena entrega acao, payoff e vitoria visualmente completos, dispensando explicacao externa."
+      }
+    },
+    {
+      "n": 6,
+      "beat_narrativo": "cta",
+      "descricao_visual": "Pose final de heroi vitorioso, hero shot. O mago de pe em primeiro plano de frente para a camera (corpo inteiro visivel), cajado fincado no chao ao lado dele apontando para cima com o cristal roxo brilhando suavemente. Vila medieval salva e castelo de pedra intacto ao fundo, ceu de amanhecer com gradiente laranja-rosa quente, brilho dourado tranquilo. Composicao limpa com espaco vazio no topo e na base para o texto de CTA ser inserido depois; sem texto, sem logo, sem elementos de UI na imagem.",
+      "mood": "triunfo, alivio, convite final",
+      "duracao_seg": 4,
+      "personagem_presente": "completo",
+      "cena_brief": {
+        "cena_id": "cena-6",
+        "objetivo": "fechar com hero shot vitorioso e convite ao CTA",
+        "o_que_comunica": "O mago venceu, a vila esta salva e agora e a sua vez de jogar.",
+        "metodo_comunicacao": "hero shot classico com composicao limpa reservando espaco para texto de CTA",
+        "como_comunica": "corpo inteiro frontal, cajado fincado, ceu de amanhecer, espaco vazio no topo e base",
+        "arco": {
+          "inicio": "mago em pose de vitoria",
+          "meio": "cristal brilha suavemente como lembrete do poder",
+          "fim": "convite visual para o CTA sem elementos de UI competindo"
+        },
+        "sobrevive_sozinha": true,
+        "motivo_teste_vampiro": "A cena funciona como hero shot standalone: personagem, poder e convite visual estao todos presentes."
+      }
+    }
+  ]
+}

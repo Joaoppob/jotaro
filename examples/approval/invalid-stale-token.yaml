@@ -1,0 +1,14 @@
+approval:
+  project_id: "ExampleBrand"
+  generation_id: "2026-07-03-example-gym-001"
+  prompt_version: "v1.0"
+  prompt_hash: "abc12345def67890"
+  gates_snapshot_hash: "gatehash00112233"
+  approved_by: "maintainer"
+  approved_at: "2026-07-02T14:00:00-03:00"
+  decision: "approved"
+  production_token: "eyJwYXlsb2FkIjp7fX0="
+  expires_at: "2026-07-03T00:00:00-03:00"
+  allowed_tools:
+    - "mcp__higgsfield__generate_video"
+  notes: "Token expirado — aprovado no dia 02, mas expirou no dia 03."

@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jotaro.local/schemas/alma.schema.json",
+  "title": "Jotaro brief de alma contract",
+  "description": "Brief de alma do soul-strategist: verdade emocional, locucao cronometrada, estrategia de render por beat e guarda regulatoria. O sentido vai pra VOZ, nunca a marca.",
+  "type": "object",
+  "required": ["personagem", "plataforma", "verdade_emocional", "locucao", "estrategia_render", "guarda_regulatoria"],
+  "properties": {
+    "personagem": { "type": "string" },
+    "plataforma": { "type": "string" },
+    "verdade_emocional": {
+      "type": "object",
+      "required": ["desejo", "obstaculo", "virada", "respiro"],
+      "properties": {
+        "desejo": { "type": "string" },
+        "obstaculo": { "type": "string" },
+        "virada": { "type": "string", "description": "virada interna da personagem, nao desfecho funcional do produto" },
+        "respiro": { "type": "string" }
+      }
+    },
+    "locucao": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["inicio_seg", "fim_seg", "texto", "beat"],
+        "properties": {
+          "inicio_seg": { "type": "number", "minimum": 0 },
+          "fim_seg": { "type": "number", "minimum": 0 },
+          "texto": { "type": "string", "description": "o sentido vai pra VOZ; o produto NUNCA e nomeado na locucao" },
+          "beat": { "type": "integer" }
+        }
+      }
+    },
+    "estrategia_render": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["beat", "modo", "justificativa"],
+        "properties": {
+          "beat": { "type": "integer" },
+          "modo": { "type": "string", "enum": ["hard-still", "movimento"] },
+          "justificativa": { "type": "string" }
+        }
+      }
+    },
+    "guarda_regulatoria": {
+      "type": "object",
+      "required": ["produto_nao_inicia", "sem_pack_shot", "produto_nao_a_camera", "sem_desfecho_funcional", "produto_como_aliado"],
+      "properties": {
+        "produto_nao_inicia": { "type": "boolean" },
+        "sem_pack_shot": { "type": "boolean" },
+        "produto_nao_a_camera": { "type": "boolean" },
+        "sem_desfecho_funcional": { "type": "boolean" },
+        "produto_como_aliado": { "type": "boolean" }
+      }
+    }
+  }
+}

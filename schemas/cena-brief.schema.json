@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jotaro.local/schemas/cena-brief.schema.json",
+  "title": "Jotaro Jotaro 0.8 cena brief",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "cena_id",
+    "objetivo",
+    "o_que_comunica",
+    "metodo_comunicacao",
+    "como_comunica",
+    "arco",
+    "sobrevive_sozinha",
+    "motivo_teste_vampiro"
+  ],
+  "properties": {
+    "cena_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Identificador estavel da cena dentro da geracao, ex: cena-1."
+    },
+    "objetivo": {
+      "type": "string",
+      "minLength": 5,
+      "description": "O que esta cena precisa realizar como projeto filho."
+    },
+    "o_que_comunica": {
+      "type": "string",
+      "minLength": 10,
+      "description": "Mensagem central desta cena isolada."
+    },
+    "metodo_comunicacao": {
+      "type": "string",
+      "minLength": 10,
+      "description": "Dispositivo criativo/estrutural da cena; estrategia antes da execucao."
+    },
+    "como_comunica": {
+      "type": "string",
+      "minLength": 10,
+      "description": "Execucao tecnica que realiza o metodo: camera, montagem, realismo, audio e performance."
+    },
+    "arco": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["inicio", "meio", "fim"],
+      "properties": {
+        "inicio": { "type": "string", "minLength": 5 },
+        "meio": { "type": "string", "minLength": 5 },
+        "fim": { "type": "string", "minLength": 5 }
+      }
+    },
+    "sobrevive_sozinha": {
+      "type": "boolean",
+      "description": "Resultado do teste vampiro: a cena ainda comunica algo coerente se isolada?"
+    },
+    "motivo_teste_vampiro": {
+      "type": "string",
+      "minLength": 10,
+      "description": "Justificativa curta do teste vampiro por cena."
+    }
+  }
+}

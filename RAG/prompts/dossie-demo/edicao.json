@@ -1,0 +1,12 @@
+{
+  "personagem": "Nina",
+  "estilo_corte": "corte contemplativo lento",
+  "transicoes": ["hold", "hard-cut"],
+  "ritmo_por_secao": [
+    { "secao": "abertura (peso do dia)", "pacing": "lento, hold longo no still", "planos_distintos": 1 },
+    { "secao": "virada (ir no próprio tempo)", "pacing": "respiro — único movimento, push-in lento", "planos_distintos": 1 },
+    { "secao": "respiro final", "pacing": "lento, corte seco pro still de fecho", "planos_distintos": 1 }
+  ],
+  "match_cuts": [],
+  "justificativa": "a alma é contemplativa; o ritmo serve o silêncio interno — cortes secos entre stills, um único movimento motivado na virada, sem jump-cut que quebre a calma"
+}

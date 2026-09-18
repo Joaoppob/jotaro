@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jotaro.local/schemas/production-job.schema.json",
+  "title": "Jotaro Jotaro 0.8 production job",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "project_id",
+    "generation_id",
+    "approval_token_hash",
+    "tool_server",
+    "tool_name",
+    "model",
+    "input_prompt_path",
+    "input_manifest_path",
+    "params",
+    "status"
+  ],
+  "properties": {
+    "project_id": { "type": "string", "minLength": 1 },
+    "generation_id": { "type": "string", "minLength": 10 },
+    "approval_token_hash": { "type": "string", "minLength": 8 },
+    "prompt_hash": { "type": "string", "minLength": 8 },
+    "tool_server": {
+      "type": "string",
+      "enum": ["higgsfield"]
+    },
+    "tool_name": {
+      "type": "string",
+      "enum": ["mcp__higgsfield__generate_video", "mcp__higgsfield__generate_image", "mcp__higgsfield__generate_audio"]
+    },
+    "model": {
+      "type": "string",
+      "enum": ["kling3_0", "seedance_2_0_mini", "seedance_2_0", "nano_banana_2", "soul_cinematic"]
+    },
+    "input_prompt_path": { "type": "string", "minLength": 1 },
+    "input_manifest_path": { "type": "string", "minLength": 1 },
+    "params": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["aspect_ratio"],
+      "properties": {
+        "aspect_ratio": { "type": "string" },
+        "duration_seconds": { "type": "number", "minimum": 4, "maximum": 60 },
+        "seed": { "type": ["number", "null"] }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["queued", "running", "succeeded", "failed", "cancelled"]
+    },
+    "attempts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["started_at", "status"],
+        "properties": {
+          "started_at": { "type": "string" },
+          "finished_at": { "type": "string" },
+          "status": { "type": "string", "enum": ["running", "succeeded", "failed"] },
+          "output_paths": { "type": "array", "items": { "type": "string" } },
+          "cost": { "type": ["number", "null"] },
+          "error": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "sha256"],
+        "properties": {
+          "path": { "type": "string", "minLength": 1 },
+          "sha256": { "type": "string", "minLength": 64, "maxLength": 64 }
+        }
+      }
+    }
+  }
+}

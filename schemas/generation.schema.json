@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jotaro.local/schemas/generation.schema.json",
+  "title": "Jotaro generation context",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["project_id", "generation_id", "created_at", "status", "root", "compat_output"],
+  "properties": {
+    "project_id": { "type": "string", "minLength": 1 },
+    "generation_id": {
+      "type": "string",
+      "minLength": 10,
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9][a-z0-9-]*$"
+    },
+    "created_at": { "type": "string", "minLength": 10 },
+    "status": {
+      "type": "string",
+      "enum": ["created", "drafting", "approved", "producing", "rendered", "critiqued", "archived"]
+    },
+    "root": {
+      "type": "string",
+      "pattern": "projects/.+/generations/.+"
+    },
+    "compat_output": {
+      "type": "string",
+      "pattern": "projects/.+/output"
+    }
+  }
+}

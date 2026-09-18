@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jotaro.local/schemas/critique.schema.json",
+  "title": "Jotaro critique nivel-100 contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["artifacto", "etapa", "score_ponderado", "gate_aprovado", "criterios", "gate_anti_ia"],
+  "properties": {
+    "artifacto": { "type": "string", "minLength": 1 },
+    "etapa": { "type": "string", "enum": ["plano", "still", "clipe", "reel"] },
+    "score_ponderado": { "type": "integer", "minimum": 0, "maximum": 100 },
+    "gate_aprovado": { "type": "boolean" },
+    "criterios": {
+      "type": "array",
+      "minItems": 16,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "grupo", "score", "evidencia", "acao"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^C(1[0-6]|[1-9])$" },
+          "grupo": {
+            "type": "string",
+            "enum": ["anti_ia", "luz_cor", "composicao_camera", "ad_vertical", "arte_sujeito_coerencia"]
+          },
+          "score": { "type": "integer", "minimum": 0, "maximum": 100 },
+          "evidencia": { "type": "string", "minLength": 10 },
+          "acao": { "type": "string", "minLength": 3 }
+        }
+      }
+    },
+    "gate_anti_ia": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["limiar", "criterios", "reprovado_por"],
+      "properties": {
+        "limiar": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "criterios": {
+          "type": "array",
+          "minItems": 4,
+          "items": { "type": "string", "pattern": "^C(8|9|10|11)$" }
+        },
+        "reprovado_por": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^C(8|9|10|11)$" }
+        }
+      }
+    },
+    "parecer": { "type": "string" }
+  }
+}

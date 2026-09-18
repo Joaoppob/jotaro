@@ -1,0 +1,21 @@
+{
+  "campanha": "mago-magia-cta-baixar-agora",
+  "cliente": "example-hero",
+  "formato": "vertical 9:16",
+  "diretriz_global": "Premium por coerencia total: cada cena declara luz, composicao, camera e anti-IA antes de qualquer geracao.",
+  "cenas": [
+    {
+      "n": 1,
+      "objetivo_visual": "Abrir com ameaca legivel no frame 1, sem fade, sem logo e sem establishing lento.",
+      "frame_1": "Monstros ja entram pela faixa central segura do 9:16; a vila ao fundo da contexto sem roubar o hook.",
+      "luz": "Side key quente de fim de tarde vindo da esquerda, sombras coerentes no chao e leve smoke spill no horizonte.",
+      "composicao": "Contra-plongee vertical centralizado, com ameaca no eixo do olhar e topo/base livres para UI/caption.",
+      "camera": "Push-in lento motivado pela chegada da horda; um movimento por shot, sem flutuacao aleatoria.",
+      "cor": "Amber quente nas altas, violeta frio nas sombras, saturacao controlada em highlights.",
+      "anti_ia": {
+        "evitar": ["flat frontal light", "plastic surfaces", "random camera drift"],
+        "foco": ["coherent contact shadows", "physical weight", "stable silhouettes"]
+      }
+    }
+  ]
+}

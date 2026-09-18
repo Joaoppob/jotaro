@@ -1,0 +1,71 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node scripts/:*)",
+      "Bash(node .claude/skills/:*)",
+      "Bash(where:*)",
+      "Bash(which:*)",
+      "Bash(higgsfield:*)",
+      "Bash(hf:*)",
+      "Bash(npm install -g @higgsfield/cli:*)",
+      "mcp__higgsfield__generate_video",
+      "mcp__higgsfield__generate_image",
+      "mcp__higgsfield__generate_audio",
+      "mcp__higgsfield__balance",
+      "mcp__higgsfield__show_generations",
+      "mcp__higgsfield__show_reference_elements",
+      "mcp__higgsfield__show_characters",
+      "mcp__higgsfield__media_upload",
+      "mcp__higgsfield__media_confirm",
+      "mcp__higgsfield__job_status",
+      "mcp__higgsfield__models_explore",
+      "Task",
+      "Skill",
+      "Read",
+      "Glob",
+      "Grep",
+      "Read(./RAG/**)",
+      "Read(./projects/**/output/**)",
+      "Read(./projects/**/generations/**)",
+      "Read(./examples/**)",
+      "Write(./projects/**/output/**)",
+      "Write(./projects/**/generations/**)"
+    ],
+    "deny": [
+      "Read(./**/.credentials.json)",
+      "Read(~/.claude/.credentials.json)"
+    ]
+  },
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/scope-guard.cjs\""
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/higgsfield-gate.cjs\""
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__higgsfield__generate_video|mcp__higgsfield__generate_image|mcp__higgsfield__generate_audio",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/higgsfield-gate.cjs\""
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "nome": "<seu-projeto>",
+  "tipo_marca": "produto",
+  "status": "rascunho",
+  "descricao": "Scaffold para marca de produto físico. Copie esta pasta para projects/<seu-projeto>/, preencha o RAG, troque status para \"ativo\"."
+}

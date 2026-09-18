@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jotaro.local/schemas/dossie.schema.json",
+  "title": "Jotaro Dossie de Prompt Vivo contract",
+  "description": "Artefato vivo consolidado do fluxo Jotaro 0.8: 9 secoes (intencao, identidade, project_brief, mundo, alma, roteiro, decupagem, edicao, prompt_unico). Cada secao tem status, dono e conteudo. Secoes ausentes ficam pendentes.",
+  "type": "object",
+  "required": ["projeto", "personagem", "plataforma", "secoes"],
+  "properties": {
+    "projeto": { "type": "string" },
+    "personagem": { "type": "string" },
+    "plataforma": { "type": "string" },
+    "secoes": {
+      "type": "object",
+      "required": [
+        "intencao",
+        "identidade",
+        "project_brief",
+        "mundo",
+        "alma",
+        "roteiro",
+        "decupagem",
+        "edicao",
+        "prompt_unico"
+      ],
+      "properties": {
+        "intencao": { "type": "object", "required": ["status", "dono", "conteudo"], "properties": { "status": { "type": "string", "enum": ["preenchida", "pendente"] }, "dono": { "type": "string" }, "conteudo": { "type": ["object", "array", "string", "null"] } } },
+        "identidade": { "type": "object", "required": ["status", "dono", "conteudo"], "properties": { "status": { "type": "string", "enum": ["preenchida", "pendente"] }, "dono": { "type": "string" }, "conteudo": { "type": ["object", "array", "string", "null"] } } },
+        "project_brief": { "type": "object", "required": ["status", "dono", "conteudo"], "properties": { "status": { "type": "string", "enum": ["preenchida", "pendente"] }, "dono": { "type": "string" }, "conteudo": { "type": ["object", "array", "string", "null"] } } },
+        "mundo": { "type": "object", "required": ["status", "dono", "conteudo"], "properties": { "status": { "type": "string", "enum": ["preenchida", "pendente"] }, "dono": { "type": "string" }, "conteudo": { "type": ["object", "array", "string", "null"] } } },
+        "alma": { "type": "object", "required": ["status", "dono", "conteudo"], "properties": { "status": { "type": "string", "enum": ["preenchida", "pendente"] }, "dono": { "type": "string" }, "conteudo": { "type": ["object", "array", "string", "null"] } } },
+        "roteiro": { "type": "object", "required": ["status", "dono", "conteudo"], "properties": { "status": { "type": "string", "enum": ["preenchida", "pendente"] }, "dono": { "type": "string" }, "conteudo": { "type": ["object", "array", "string", "null"] } } },
+        "decupagem": { "type": "object", "required": ["status", "dono", "conteudo"], "properties": { "status": { "type": "string", "enum": ["preenchida", "pendente"] }, "dono": { "type": "string" }, "conteudo": { "type": ["object", "array", "string", "null"] } } },
+        "edicao": { "type": "object", "required": ["status", "dono", "conteudo"], "properties": { "status": { "type": "string", "enum": ["preenchida", "pendente"] }, "dono": { "type": "string" }, "conteudo": { "type": ["object", "array", "string", "null"] } } },
+        "prompt_unico": { "type": "object", "required": ["status", "dono", "conteudo"], "properties": { "status": { "type": "string", "enum": ["preenchida", "pendente"] }, "dono": { "type": "string" }, "conteudo": { "type": ["object", "array", "string", "null"] } } }
+      }
+    }
+  }
+}

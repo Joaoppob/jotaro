@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jotaro.local/schemas/identity.schema.json",
+  "title": "Jotaro identity contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "refs",
+    "anchor_textual",
+    "estilo",
+    "paleta",
+    "narrativa_resumo",
+    "tom"
+  ],
+  "properties": {
+    "refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "pattern": "^RAG/identidade-visual/([^/.]+/)*[^/]+\\.(png|jpg|jpeg|webp)$"
+      }
+    },
+    "anchor_textual": {
+      "type": "string",
+      "minLength": 80
+    },
+    "estilo": {
+      "type": "string",
+      "minLength": 10
+    },
+    "paleta": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 2
+      }
+    },
+    "narrativa_resumo": {
+      "type": "string",
+      "minLength": 20
+    },
+    "tom": {
+      "type": "string",
+      "minLength": 10
+    },
+    "frase_canonica": {
+      "type": "string",
+      "minLength": 20
+    },
+    "elementos_fixos": {
+      "type": "object",
+      "properties": {
+        "paleta": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 2
+          }
+        },
+        "tipografia": {
+          "type": "string",
+          "minLength": 2
+        },
+        "grade": {
+          "type": "string",
+          "minLength": 2
+        },
+        "luz_de_casa": {
+          "type": "string",
+          "minLength": 2
+        }
+      }
+    },
+    "elementos_variaveis": {
+      "type": "object",
+      "properties": {
+        "cena": {
+          "type": "string",
+          "minLength": 2
+        },
+        "acao": {
+          "type": "string",
+          "minLength": 2
+        },
+        "emocao": {
+          "type": "string",
+          "minLength": 2
+        }
+      }
+    }
+  }
+}

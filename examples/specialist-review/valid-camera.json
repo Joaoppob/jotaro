@@ -1,0 +1,30 @@
+{
+  "stage": "camera",
+  "generation_id": "2026-07-03-example-gym-001",
+  "input_hash": "abc123draft",
+  "output_hash": "def456review",
+  "ok": true,
+  "motivo": "Revisao de camera com ajustes de enquadramento.",
+  "ajuste_aplicado": true,
+  "campos_alterados": ["current_draft.shots[1].camera.movimento", "current_draft.shots[2].camera.angulo"],
+  "draft_revisado": "Texto do draft revisado com as alteracoes de camera aplicadas.",
+  "draft_revisado_path": "drafts/07-camera.md",
+  "scene_audits": [
+    {
+      "cena_id": "cena-1",
+      "ok": true,
+      "motivo": "A camera realiza o metodo de apresentacao intima sem trocar a estrutura da cena.",
+      "campos_alterados": ["current_draft.shots[1].camera.movimento"],
+      "riscos": [
+        { "descricao": "Push-in pode parecer zoom digital se o modelo simplificar o movimento", "severidade": "baixo" }
+      ]
+    }
+  ],
+  "riscos": [
+    { "descricao": "Shot 3 usa dolly-in que pode ler como zoom digital em alguns modelos", "severidade": "baixo" }
+  ],
+  "handoff": {
+    "proxima_etapa": "montagem",
+    "observacoes": ["Verificar se o angulo low do shot 2 nao conflita com a luz do teto definida pelo mundo"]
+  }
+}

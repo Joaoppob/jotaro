@@ -1,0 +1,8 @@
+{
+  "nome": "ExampleBrand",
+  "tipo_marca": "personagem",
+  "modo_visual": "biblioteca",
+  "status": "ativo",
+  "demo": true,
+  "descricao": "Demo multi-personagem fictício (trio Zara/Theo/Ivy), escrito do zero para este repositório público. Scaffold rodavel do caminho asset-first: biblioteca de personagens por subpasta + dossie de persona por personagem. As refs sao placeholders coloridos — troque pelos assets reais da marca soltando-os em RAG/identidade-visual/<personagem>/."
+}

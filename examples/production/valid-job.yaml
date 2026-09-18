@@ -1,0 +1,22 @@
+production_job:
+  project_id: ExampleBrand
+  generation_id: 2026-07-03-example-gym-001
+  approval_token_hash: "abc12345def67890abc12345def67890abc12345def67890abc12345def67890"
+  tool_server: higgsfield
+  tool_name: mcp__higgsfield__generate_video
+  model: kling3_0
+  input_prompt_path: "prompt/prompt.kling3_0.md"
+  input_manifest_path: "prompt/prompt-manifest.yaml"
+  params:
+    aspect_ratio: "9:16"
+    duration_seconds: 8
+    seed: null
+  status: succeeded
+  attempts:
+    - started_at: "2026-07-03T14:05:00-03:00"
+      finished_at: "2026-07-03T14:06:12-03:00"
+      status: succeeded
+      cost: 2.5
+  outputs:
+    - path: production/outputs/render-001.mp4
+      sha256: "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"

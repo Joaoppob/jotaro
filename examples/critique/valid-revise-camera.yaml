@@ -1,0 +1,38 @@
+project_id: ExampleBrand
+generation_id: 2026-07-03-example-gym-001
+artifact_path: "production/outputs/render-002.mp4"
+attempt: 1
+max_attempts: 3
+decision: revise_stage
+
+project_alignment:
+  objetivo: 2
+  identidade: 1
+  enredo: 2
+  camera: 0
+  montagem: 2
+  realismo: 1
+  audio: 2
+
+performance_hypothesis:
+  attention: 2
+  branding: 1
+  connection: 1
+  direction: 2
+
+failures:
+  - stage: camera
+    severity: blocking
+    evidence: "O dolly-in do shot 3 le como zoom digital; a personagem perde proporcao no rosto"
+    root_cause: prompt
+    next_action: revise_stage
+  - stage: realismo
+    severity: medio
+    evidence: "Textura de pele muito lisa no shot 2 — look de IA generica"
+    root_cause: specialist
+    next_action: revise_stage
+
+learnings:
+  - pattern: "dolly-in em close-up extremo causa distorcao facial em kling3_0"
+    recommendation: "Usar push-in lento ou static em close-ups extremos"
+    stage_affected: camera

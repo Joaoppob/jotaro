@@ -1,0 +1,30 @@
+{
+  "artifacto": "RAG/prompts/exemplo-shotlist-mago.json",
+  "etapa": "plano",
+  "score_ponderado": 72,
+  "gate_aprovado": true,
+  "criterios": [
+    { "id": "C1", "grupo": "luz_cor", "score": 75, "evidencia": "A cena declara fonte lateral quente e direcao plausivel.", "acao": "manter" },
+    { "id": "C2", "grupo": "luz_cor", "score": 70, "evidencia": "Ha modelagem por lateral/contra, mas ainda pode evitar luz chapada.", "acao": "refinar luz" },
+    { "id": "C3", "grupo": "luz_cor", "score": 70, "evidencia": "Contraste serve drama sem esmagar tudo no plano textual.", "acao": "manter" },
+    { "id": "C4", "grupo": "luz_cor", "score": 65, "evidencia": "Paleta existe, mas precisa reduzir saturacao de highlights.", "acao": "reduzir sat" },
+    { "id": "C5", "grupo": "composicao_camera", "score": 65, "evidencia": "DoF ainda e pouco declarada como escolha narrativa.", "acao": "declarar DoF" },
+    { "id": "C6", "grupo": "composicao_camera", "score": 75, "evidencia": "Composicao vertical centralizada preserva faixa segura.", "acao": "manter" },
+    { "id": "C7", "grupo": "composicao_camera", "score": 70, "evidencia": "Movimento unico e motivado por reveal ou ameaca.", "acao": "manter" },
+    { "id": "C8", "grupo": "anti_ia", "score": 60, "evidencia": "Plano pede peso fisico e sombras coerentes; render ainda nao observado.", "acao": "ver pos-render" },
+    { "id": "C9", "grupo": "anti_ia", "score": 60, "evidencia": "Plano evita plastico, mas textura real depende do modelo.", "acao": "ver pos-render" },
+    { "id": "C10", "grupo": "anti_ia", "score": 65, "evidencia": "Anchor enumera tracos, defendendo estabilidade do personagem.", "acao": "manter anchor" },
+    { "id": "C11", "grupo": "anti_ia", "score": 55, "evidencia": "Continuidade entre cortes e fraca sem carry de referencia real.", "acao": "usar refs" },
+    { "id": "C12", "grupo": "ad_vertical", "score": 80, "evidencia": "Cena 1 e hook visual direto, sem abertura lenta.", "acao": "manter" },
+    { "id": "C13", "grupo": "ad_vertical", "score": 70, "evidencia": "Cada corte adiciona informacao, com payoff perto do fim.", "acao": "apertar ritmo" },
+    { "id": "C14", "grupo": "arte_sujeito_coerencia", "score": 65, "evidencia": "Props sao poucos, mas mundo ainda pode parecer generico.", "acao": "restringir props" },
+    { "id": "C15", "grupo": "arte_sujeito_coerencia", "score": 70, "evidencia": "Sujeito tem tracos distintos e presenca heroica clara.", "acao": "manter" },
+    { "id": "C16", "grupo": "arte_sujeito_coerencia", "score": 70, "evidencia": "Coerencia global existe no plano, mas render decide o premium.", "acao": "ver pos-render" }
+  ],
+  "gate_anti_ia": {
+    "limiar": 20,
+    "criterios": ["C8", "C9", "C10", "C11"],
+    "reprovado_por": []
+  },
+  "parecer": "Aprovado como plano textual, com risco honesto em continuidade e textura ate haver render."
+}

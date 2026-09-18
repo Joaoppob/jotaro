@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jotaro.local/schemas/jotaro-profile.schema.json",
+  "title": "Jotaro user profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "versao",
+    "primeiro_run_concluido",
+    "modo_expert",
+    "ultima_marca_usada",
+    "atualizado_em"
+  ],
+  "properties": {
+    "versao": { "type": "integer", "const": 1 },
+    "primeiro_run_concluido": { "type": "boolean" },
+    "modo_expert": { "type": "boolean" },
+    "ultima_marca_usada": { "type": ["string", "null"] },
+    "atualizado_em": { "type": "string" }
+  }
+}

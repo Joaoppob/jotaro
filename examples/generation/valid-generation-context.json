@@ -1,0 +1,8 @@
+{
+  "project_id": "ExampleBrand",
+  "generation_id": "2026-07-03-example-gym-001",
+  "created_at": "2026-07-03T13:00:00-03:00",
+  "status": "created",
+  "root": "projects/ExampleBrand/generations/2026-07-03-example-gym-001",
+  "compat_output": "projects/ExampleBrand/output"
+}

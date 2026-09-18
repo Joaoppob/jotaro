@@ -1,0 +1,52 @@
+{
+  "projeto": "FitBar",
+  "formato": "video",
+  "modelo": "kling3_0",
+  "aspect_ratio": "9:16",
+  "personagem": "Duda",
+  "element_id": "<<<element_id>>>",
+  "produto_element_id": "<<<produto_element_id>>>",
+  "duracao_seg": 14,
+  "negative_prompt": "neon colors, stiff posing, text overlays",
+  "audio": {
+    "voz_id": "voz_mia_natural",
+    "locucao": [
+      { "inicio_seg": 0, "fim_seg": 4, "texto": "gente, vem comigo que hoje o treino tá diferente", "beat": "gancho" },
+      { "inicio_seg": 4, "fim_seg": 8, "texto": "ó, esse é meu treino de hoje, bem rapidinho", "beat": "desenvolvimento-conversa" },
+      { "inicio_seg": 8, "fim_seg": 12, "texto": "bora, cola aqui que o treino continua", "beat": "cta" }
+    ]
+  },
+  "shots": [
+    {
+      "n": 1,
+      "beat": "gancho",
+      "descricao": "Duda entra em quadro ja treinando numa academia moderna -- levantando peso, ajustando o cabelo -- e fala direto pra camera desde o primeiro instante, sem pausa muda antes da fala comecar. Movimento energetico mas realista, acao e fala juntas.",
+      "tamanho_plano": "medium",
+      "angulo": "eye",
+      "movimento_camera": "handheld energetic, quick zoom-ins",
+      "fala": "gente, vem comigo que hoje o treino tá diferente",
+      "mood": "confident, energetic"
+    },
+    {
+      "n": 2,
+      "beat": "desenvolvimento-conversa",
+      "descricao": "Duda numa pausa curta, falando casual pra camera como num vlog de rotina. Relaxada, sorrindo, levemente ofegante.",
+      "tamanho_plano": "close",
+      "angulo": "eye",
+      "movimento_camera": "static hold, soft handheld drift",
+      "fala": "ó, esse é meu treino de hoje, bem rapidinho",
+      "mood": "spontaneous, friendly"
+    },
+    {
+      "n": 3,
+      "beat": "cta",
+      "descricao": "Duda tira o pote real da marca FitBar (ancorada no Element do produto, nunca uma embalagem inventada) da bolsa de academia. A camera se assenta: close deliberado na mao dela, a embalagem pegando uma luz pratica quente (luz de vestiario ou janela, motivada), os dedos pegando uma barra. Ela leva a boca e come, um sorriso pequeno e genuino ao saborear -- sem performar -- e diz, leve, enquanto a camera segura no produto: 'bora, segue aí pra ver o resto do treino'. O produto fica nitido e em foco, segurado naturalmente na altura do peito, nunca de frente pra camera como pack shot, mas nunca escondido ou desfocado. Corte seco na ultima palavra -- sem corte de volta pro treino, sem mencao a capitulo/serie.",
+      "tamanho_plano": "extreme-close",
+      "angulo": "high",
+      "movimento_camera": "camera settles, slow push-in close-up, holds on product and smile -- no cut back",
+      "fala": "bora, cola aqui que o treino continua",
+      "mood": "warm, genuine, self-care, unhurried"
+    }
+  ],
+  "prompt": "Vertical TikTok-style video, 9:16, dynamic lifestyle fitness routine inside a modern gym, real energy from start to finish. A stylish young woman named Duda <<<element_id>>> moves through her daily gym routine -- natural, energetic, feminine, aspirational, like a polished TikTok vlog with cinematic cuts. The arc is simple and sharp: her routine first, her personality next, the product last -- the video closes on it, never cuts away from it.\nScene 1 (routine -- the hook, action and voice together from frame one): Duda is already training in the gym when the video opens, mid-motion, and speaks straight to camera the instant it starts -- saying \"gente, olha só o que eu tô montando aqui hoje\" as she adjusts her hair and grabs the weights, no silent beat before the line lands. Quick cuts of chalk dust on her hands, stretching against the rack, short breaks between sets. Sweat catching the overhead gym lights. The camera moves with real energy: handheld-style shots, close-ups of hands gripping the bar, sneakers on rubber flooring, mirror reflections catching her mid-motion -- action and voice building toward the next scene together, never a static muted frame.\nScene 2 (personality): Duda pauses, leaning on the rack, talking casually straight to camera during a break -- relaxed, smiling, slightly out of breath, sharing a quick moment from her routine like a genuine TikTok \"day in my routine\" clip. Natural window light mixes with the gym's indoor lights on her skin. Soft background gym noise, natural body language, quick jump cuts between her words.\nScene 3 (product -- the closing beat, held longer than the cuts before it): Duda reaches into her gym bag and pulls out the FitBar wrapper <<<produto_element_id>>> -- the real branded bottle, never a generic invented jar. The camera settles -- a deliberate close-up on her hand, the packaging catching a warm practical light source (a locker-room lamp or window light, motivated, not staged), her fingers peeling back the wrapper. She brings it to her mouth and eats it, a small, genuine, unguarded smile as she tastes it -- savoring, not performing -- and says, light and natural, right as the camera holds on the product: \"bora, segue aí pra ver o resto do treino\". The product stays clearly in frame and in focus, held naturally in her hand at chest height, never facing the lens like a commercial pack shot, but never hidden or blurred either -- this is the last thing the video shows. Hard cut on her last word -- no cut back to the workout, no lingering resolve, no mention of chapters or series.\nVisual style: modern TikTok aesthetic, clean gym environment, soft natural lighting mixed with subtle indoor gym lights, fresh skin tones, realistic textures -- sweat, chalk, rubber, steel -- slightly cinematic but still casual and social-media friendly. Soft, feminine, contemporary palette with subtle pink accents that connect to the brand, warming slightly into Scene 3's practical light.\nEditing style: fast-paced TikTok cuts and rhythmic transitions through Scenes 1 and 2, jump-cuts and quick zoom-ins carrying the energy -- then a deliberate slowdown into Scene 3, where the cutting rate drops and the camera holds, giving the product moment real weight instead of rushing past it. Dynamic but not chaotic; the pacing itself signals what matters.\nMood: confident, healthy, energetic, feminine, aspirational through the routine and personality beats -- settling into warm, personal, unhurried satisfaction in the product beat. Not commercial, not staged.\nCamera direction: vertical framing throughout. Scene 1 -- handheld energetic mid shots and close-ups, mirror angles, quick zoom-ins. Scene 2 -- medium close-up, natural handheld drift, eye-level, speaking to camera. Scene 3 -- camera settles into a static or slow push-in close-up on hand and face, product clearly lit and in focus, held for the final beat.\nAvoid: exaggerated commercial acting, unrealistic gym movements, neon colors, overly dramatic lighting, fake smiles, stiff posing, oversexualized framing, messy background, product facing the lens like a catalog shot, cutting away from the product before the video ends, text overlays unless needed.\nCreate a 12-15 second vertical TikTok-style video in 9:16.\n0-4 seconds: Duda already training in a modern gym, speaking straight to camera from the first instant (\"gente, olha só o que eu tô montando aqui hoje\") -- fast cuts of lifting weights, chalk on hands, stretching, checking herself in the mirror. Energetic, real movement, action and voice together, no silent opening frame.\n4-8 seconds: Duda takes a short break, talks casually straight to camera about her routine -- natural, confident, friendly, relaxed, genuine half-smile.\n8-12 seconds (closing beat -- the product): Duda opens her gym bag, takes out the FitBar wrapper, unwraps the bar, brings it to her mouth, eats it, small genuine smile, and says \"bora, segue aí pra ver o resto do treino\" as the camera holds on her hand and the product, clearly lit and in focus. Hard cut on her last word -- no cut back to the workout.\nStyle: polished TikTok vlog, lifestyle fitness aesthetic, soft feminine colors, clean gym lighting, realistic handheld camera, quick jump cuts easing into a deliberate hold, natural expressions, stylish but casual direction. The product is part of her routine and her self-care -- genuinely held, genuinely eaten, clearly seen, never hidden and never sold like a pack shot."
+}

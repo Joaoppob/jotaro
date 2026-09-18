@@ -1,0 +1,12 @@
+# Normaliza fins de linha: LF no repositorio E no working tree.
+# O produto e uma pasta .claude portatil cujos scripts .cjs parseiam por \n;
+# com core.autocrlf=true no Windows, sem isto os arquivos vinham como CRLF e
+# quebravam parsers frageis (ex: parseFrontmatter do verify.cjs) em silencio.
+* text=auto eol=lf
+
+# Binarios: nunca normalizar.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.mp4 binary

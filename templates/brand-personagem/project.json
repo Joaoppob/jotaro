@@ -1,0 +1,6 @@
+{
+  "nome": "<seu-projeto>",
+  "tipo_marca": "personagem",
+  "status": "rascunho",
+  "descricao": "Scaffold para marca com personagem/mascote. Copie esta pasta para projects/<seu-projeto>/, preencha o RAG, troque status para \"ativo\"."
+}

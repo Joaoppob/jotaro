@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jotaro.local/schemas/post-render-critique.schema.json",
+  "title": "Jotaro Jotaro 0.8 post-render critique",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "project_id",
+    "generation_id",
+    "artifact_path",
+    "decision",
+    "project_alignment",
+    "performance_hypothesis"
+  ],
+  "properties": {
+    "project_id": { "type": "string", "minLength": 1 },
+    "generation_id": { "type": "string", "minLength": 10 },
+    "artifact_path": { "type": "string", "minLength": 1 },
+    "decision": {
+      "type": "string",
+      "enum": ["approved", "variation", "revise_prompt", "revise_stage", "rerender_tool", "reopen_brief", "reject"]
+    },
+    "project_alignment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["objetivo", "identidade", "enredo", "camera", "montagem", "realismo", "audio"],
+      "properties": {
+        "objetivo": { "type": "integer", "minimum": 0, "maximum": 2 },
+        "identidade": { "type": "integer", "minimum": 0, "maximum": 2 },
+        "enredo": { "type": "integer", "minimum": 0, "maximum": 2 },
+        "camera": { "type": "integer", "minimum": 0, "maximum": 2 },
+        "montagem": { "type": "integer", "minimum": 0, "maximum": 2 },
+        "realismo": { "type": "integer", "minimum": 0, "maximum": 2 },
+        "audio": { "type": "integer", "minimum": 0, "maximum": 2 }
+      }
+    },
+    "performance_hypothesis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["attention", "branding", "connection", "direction"],
+      "properties": {
+        "attention": { "type": "integer", "minimum": 0, "maximum": 2 },
+        "branding": { "type": "integer", "minimum": 0, "maximum": 2 },
+        "connection": { "type": "integer", "minimum": 0, "maximum": 2 },
+        "direction": { "type": "integer", "minimum": 0, "maximum": 2 }
+      }
+    },
+    "failures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["stage", "severity", "evidence", "root_cause", "next_action"],
+        "properties": {
+          "stage": {
+            "type": "string",
+            "enum": ["historia", "mundo", "enredo", "camera", "montagem", "realismo", "audio", "prompt_smith", "modelo", "adapter", "brief"]
+          },
+          "severity": {
+            "type": "string",
+            "enum": ["baixo", "medio", "alto", "blocking"]
+          },
+          "evidence": { "type": "string", "minLength": 1 },
+          "root_cause": {
+            "type": "string",
+            "enum": ["prompt", "specialist", "model", "adapter", "brief", "unknown"]
+          },
+          "next_action": {
+            "type": "string",
+            "enum": ["revise_stage", "rerender_tool", "reopen_brief", "reject", "accept_as_is"]
+          }
+        }
+      }
+    },
+    "learnings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["pattern", "recommendation"],
+        "properties": {
+          "pattern": { "type": "string", "minLength": 1 },
+          "recommendation": { "type": "string", "minLength": 1 },
+          "stage_affected": { "type": "string" }
+        }
+      }
+    }
+  }
+}

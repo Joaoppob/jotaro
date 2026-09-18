@@ -1,0 +1,58 @@
+{
+  "campanha": "trio-curadoria-biblioteca-exemplo",
+  "cliente": "marca-ficticia-trio",
+  "data": "2026-06-26",
+  "round": 1,
+  "objetivo": "exemplo SINTETICO de shot-list em modo biblioteca (asset-first): cada cena reaproveita um asset existente da personagem certa, sem geracao e sem custo de imagem. Projeto ficticio, sem dados de cliente real.",
+  "tipo_marca": "personagem",
+  "formato": "vertical 9:16 mobile/TikTok",
+  "duracao_total_seg": 12,
+  "modelo": "nano_banana_2 (Higgsfield CLI — modo biblioteca: selecao, sem disparo de geracao)",
+  "referencias_obrigatorias": [
+    "RAG/identidade-visual/nina/zoe_05_cafe_artesanal.png",
+    "RAG/identidade-visual/lea/ana_03_estudio.png",
+    "RAG/identidade-visual/duda/mia_07_rua.png"
+  ],
+  "anchor_personagem": "Conjunto de tres personagens da marca ficticia, cada uma com biblioteca de referencia propria em RAG/identidade-visual/<personagem>/: Nina, Lea e Duda. Em modo biblioteca cada cena reaproveita o melhor asset existente da personagem da cena, preservando rosto, figurino e product placement on-brand. Estilo lifestyle vertical 9:16, cores quentes, identidade consistente.",
+  "cenas": [
+    {
+      "n": 1,
+      "tag": "hook-nina",
+      "fonte": "biblioteca",
+      "personagem": "nina",
+      "asset_path": "RAG/identidade-visual/nina/zoe_05_cafe_artesanal.png",
+      "tempo_seg": "0-4",
+      "intencao": "Hook: Nina abre o reel com o produto na mesa do cafe, clima acolhedor.",
+      "personagem_visivel": "completo",
+      "salvar_em": "output/imagens/cena-01-hook-nina.png"
+    },
+    {
+      "n": 2,
+      "tag": "desenvolvimento-lea",
+      "fonte": "biblioteca",
+      "personagem": "lea",
+      "asset_path": "RAG/identidade-visual/lea/ana_03_estudio.png",
+      "tempo_seg": "4-8",
+      "intencao": "Desenvolvimento: Lea no estudio mostra o produto em uso, energia criativa.",
+      "personagem_visivel": "completo",
+      "salvar_em": "output/imagens/cena-02-desenvolvimento-lea.png"
+    },
+    {
+      "n": 3,
+      "tag": "cta-duda",
+      "fonte": "biblioteca",
+      "personagem": "duda",
+      "asset_path": "RAG/identidade-visual/duda/mia_07_rua.png",
+      "tempo_seg": "8-12",
+      "intencao": "CTA: Duda fecha o reel na rua segurando o produto, convite final limpo.",
+      "personagem_visivel": "completo",
+      "salvar_em": "output/imagens/cena-03-cta-duda.png"
+    }
+  ],
+  "gate_consistencia": {
+    "criterio": "cada cena reaproveita o asset correto da personagem certa (nina/lea/duda), sem mistura de personagens",
+    "passa": "3/3 assets resolvem dentro de RAG/identidade-visual/<personagem>/",
+    "regerar_cenas_falhas": "n/a em modo biblioteca: nao ha geracao; se faltar asset, a cena vira fonte=geracao (o buraco)",
+    "pausar_para_revisao": "qualquer asset_path fora de RAG/identidade-visual/ — pausar, nunca apontar para fora do projeto"
+  }
+}

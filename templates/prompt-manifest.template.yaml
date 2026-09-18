@@ -1,0 +1,96 @@
+project_id: ExampleBrand
+generation_id: 2026-07-03-example-gym-001
+model_target: kling3_0
+aspect_ratio: "9:16"
+duration_seconds: 8
+primary_metric: hook_rate
+brief_hash: ""
+identity_hash: ""
+specialist_reviews_hash: ""
+scenes:
+  - cena_id: "cena-1"
+    time: "0-8s"
+    beat: hook
+    cena_brief:
+      cena_id: "cena-1"
+      objetivo: ""
+      o_que_comunica: ""
+      metodo_comunicacao: ""
+      como_comunica: ""
+      arco:
+        inicio: ""
+        meio: ""
+        fim: ""
+      sobrevive_sozinha: true
+      motivo_teste_vampiro: ""
+    shot_ids: [1, 2, 3]
+shots:
+  - id: 1
+    cena_id: "cena-1"
+    beat: hook
+    time: "0-2s"
+    subject: "Duda na academia"
+    action: "Duda levanta o olhar do haltere, surpresa"
+    world: "academia-duda, luz natural da manha, espelhos ao fundo"
+    camera:
+      shot_size: "medium close-up"
+      angle: "eye-level"
+      movement: "slow dolly in"
+      lens_or_look: "35mm documentary"
+    montagem:
+      cut_style: "hard cut"
+      duration: 2
+    realismo:
+      motion_blur: "subtle shutter blur on hand movement"
+      imperfections: ["fio de cabelo solto", "textura de roupa de academia"]
+    audio:
+      dialogue: "Espera... isso funcionou?"
+      music: "lo-fi beat discreto"
+      ambience: "som abafado de academia, halteres ao fundo"
+  - id: 2
+    cena_id: "cena-1"
+    beat: desenvolvimento
+    time: "2-5s"
+    subject: "Duda e o pote de ExampleBrand"
+    action: "Duda pega o pote, sorri e mostra pra camera"
+    world: "mesmo cenario, luz mais quente no rosto"
+    camera:
+      shot_size: "close-up"
+      angle: "slight low angle"
+      movement: "static"
+      lens_or_look: "50mm natural"
+    montagem:
+      cut_style: "match cut"
+      duration: 3
+    realismo:
+      motion_blur: "none"
+      imperfections: ["reflexo natural no plastico do pote"]
+    audio:
+      dialogue: "ExampleBrand — o snack que me segura."
+      music: "mesmo beat, levemente mais presente"
+      ambience: "silence"
+  - id: 3
+    cena_id: "cena-1"
+    beat: cta
+    time: "5-8s"
+    subject: "Pote de ExampleBrand em destaque"
+    action: "Camera segura no produto, texto 'ExampleBrand' aparece"
+    world: "fundo levemente desfocado da academia"
+    camera:
+      shot_size: "extreme close-up"
+      angle: "eye-level"
+      movement: "push-in lento"
+      lens_or_look: "85mm product"
+    montagem:
+      cut_style: "fade to logo"
+      duration: 3
+    realismo:
+      motion_blur: "none"
+      imperfections: []
+    audio:
+      dialogue: ""
+      music: "beat resolve"
+      ambience: "silence"
+negative_controls:
+  - "no text logos on products"
+  - "no AI-perfect skin texture"

@@ -1,0 +1,6 @@
+{
+  "nome": "<seu-projeto>",
+  "tipo_marca": "servico",
+  "status": "rascunho",
+  "descricao": "Scaffold para marca de serviço (identidade visual sem personagem literal). Copie esta pasta para projects/<seu-projeto>/, preencha o RAG, troque status para \"ativo\"."
+}

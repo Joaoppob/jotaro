@@ -1,0 +1,13 @@
+{
+  "personagem": "Nina",
+  "clipes": [
+    {
+      "beat": 3,
+      "duracao_seg": 4,
+      "prompt": "Slow, smooth push-in toward Nina over four seconds. Her shoulders ease down and she takes one soft, settling breath as her expression quiets, a small inward release. Everything else holds: stable framing, consistent identity, the existing light unchanged. One continuous shot, calm and grounded.",
+      "movimento_camera": "slow push-in",
+      "micro_acao": "ombros baixam, um respiro de acomodação na virada",
+      "cue_estabilidade": "everything else holds, stable framing, consistent identity, continuous shot"
+    }
+  ]
+}

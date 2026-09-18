@@ -1,0 +1,7 @@
+project_id: ExampleBrand
+generation_id: 2026-07-03-example-gym-001
+model_target: kling3_0
+aspect_ratio: "9:16"
+duration_seconds: 8
+primary_metric: hook_rate
+shots: []

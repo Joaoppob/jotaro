@@ -1,0 +1,50 @@
+project_id: ExampleBrand
+generation_id: 2026-07-03-example-gym-001
+model_target: kling3_0
+aspect_ratio: "9:16"
+duration_seconds: 8
+primary_metric: hook_rate
+brief_hash: "abc12345briefhash"
+identity_hash: "def67890identityhash"
+specialist_reviews_hash: "ghi11223reviewshash"
+scenes:
+  - cena_id: "cena-1"
+    time: "0-3s"
+    beat: hook
+    cena_brief:
+      cena_id: "cena-1"
+      objetivo: "apresentar Duda em acao"
+      o_que_comunica: "A rotina fitness dela e real, leve e aspiracional."
+      metodo_comunicacao: "listagem intima em primeira pessoa"
+      como_comunica: "close UGC na academia, luz natural e movimento de camera discreto"
+      arco:
+        inicio: "Duda esta concentrada no treino"
+        meio: "ela percebe a camera e abre intimidade"
+        fim: "a rotina fica pronta para revelar o produto"
+      sobrevive_sozinha: true
+      motivo_teste_vampiro: "Mesmo isolada, a cena apresenta personagem, rotina e tom."
+    shot_ids: [1]
+shots:
+  - id: 1
+    cena_id: "cena-1"
+    beat: hook
+    time: "0-3s"
+    subject: "Duda na academia"
+    action: "Duda levanta o olhar do haltere"
+    world: "academia-duda, luz natural da manha"
+    camera:
+      shot_size: "medium close-up"
+      angle: "eye-level"
+      movement: "slow dolly in"
+      lens_or_look: "35mm documentary"
+    montagem:
+      cut_style: "hard cut"
+      duration: 3
+    realismo:
+      motion_blur: "subtle shutter blur on hand movement"
+      imperfections: ["fio de cabelo solto"]
+    audio:
+      dialogue: ""
+      music: "lo-fi beat discreto"
+      ambience: "som abafado de academia"
+negative_controls: []

@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jotaro.local/schemas/project-brief.schema.json",
+  "title": "Jotaro Jotaro 0.8 project brief",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "project_id",
+    "generation_id",
+    "objetivo",
+    "metrica_primaria",
+    "nivel_awareness",
+    "single_minded_proposition",
+    "o_que_comunica",
+    "metodo_comunicacao",
+    "como_comunica",
+    "publico",
+    "canal",
+    "formato",
+    "estetica",
+    "time_budget",
+    "restricoes",
+    "provas_permitidas",
+    "nao_fazer"
+  ],
+  "properties": {
+    "project_id": { "type": "string", "minLength": 1 },
+    "generation_id": { "type": "string", "minLength": 10 },
+    "objetivo": {
+      "type": "string",
+      "enum": ["awareness", "consideration", "conversion", "retencao", "educacao", "outro"]
+    },
+    "metrica_primaria": {
+      "type": "string",
+      "enum": ["hook_rate", "hold_rate", "vcr", "ctr", "cpa", "roas", "qualidade_visual"]
+    },
+    "nivel_awareness": {
+      "type": "string",
+      "enum": ["fria", "problem-aware", "solution-aware", "product-aware", "retargeting"]
+    },
+    "single_minded_proposition": { "type": "string", "minLength": 20 },
+    "o_que_comunica": { "type": "string", "minLength": 10 },
+    "metodo_comunicacao": {
+      "type": "string",
+      "minLength": 10,
+      "description": "Dispositivo criativo/estrutural do projeto mae: contraste, espelho/bookend, listagem intima, testemunho direto, escalada etc. Metodo e estrategia, nao execucao tecnica."
+    },
+    "como_comunica": {
+      "type": "string",
+      "minLength": 10,
+      "description": "Execucao tecnica que realiza o metodo: camera, montagem, realismo, audio, performance e ritmo."
+    },
+    "publico": { "type": "string", "minLength": 5 },
+    "canal": {
+      "type": "string",
+      "enum": ["tiktok", "reels", "youtube_shorts", "outro"]
+    },
+    "formato": {
+      "type": "string",
+      "enum": ["video", "video_mudo", "imagem"]
+    },
+    "estetica": {
+      "type": "string",
+      "enum": ["ugc-native", "polished", "cinematic", "documental", "outro"]
+    },
+    "time_budget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["hook", "desenvolvimento", "payoff_cta"],
+      "properties": {
+        "hook": { "type": "string", "minLength": 1 },
+        "desenvolvimento": { "type": "string", "minLength": 1 },
+        "payoff_cta": { "type": "string", "minLength": 1 }
+      }
+    },
+    "restricoes": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "provas_permitidas": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "nao_fazer": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "estrutura_solicitada": {
+      "type": ["string", "null"],
+      "description": "Copiado verbatim de intake.estrutura_solicitada quando presente -- fluxo de cenas curto OU roteiro de diretor completo (cenas cronometradas, falas, musica) que o usuario ja forneceu. Quando preenchido, tem PRIORIDADE sobre os moldes padrao (hook-first, world-building generico, PAS/AIDA/Hero) no storyboard-director e nos 7 especialistas da Fase 2 -- eles encaixam a estrutura pedida, nao a substituem. Default null (usuario nao forneceu; agentes decidem com os moldes padrao)."
+    }
+  }
+}

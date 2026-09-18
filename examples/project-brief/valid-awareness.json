@@ -1,0 +1,23 @@
+{
+  "project_id": "ExampleBrand",
+  "generation_id": "2026-07-03-example-gym-001",
+  "objetivo": "awareness",
+  "metrica_primaria": "hook_rate",
+  "nivel_awareness": "fria",
+  "single_minded_proposition": "Example Brand transforma a rotina fitness em um ritual leve e desejavel.",
+  "o_que_comunica": "A marca ajuda a personagem a manter constancia sem perder prazer.",
+  "metodo_comunicacao": "listagem intima em primeira pessoa, revelando trabalho, pet e produto como camadas da rotina",
+  "como_comunica": "Cortes UGC-native, fala direta para camera, close no treino e produto aparecendo como parte natural do ritual.",
+  "publico": "mulheres jovens que treinam e gostam de rotina visualmente aspiracional",
+  "canal": "reels",
+  "formato": "video",
+  "estetica": "ugc-native",
+  "time_budget": {
+    "hook": "0-2s",
+    "desenvolvimento": "2-12s",
+    "payoff_cta": "12-15s"
+  },
+  "restricoes": ["nao prometer resultado medico", "nao parecer comercial de TV"],
+  "provas_permitidas": ["rotina visual", "close real do produto", "fala em primeira pessoa"],
+  "nao_fazer": ["nao usar card de texto como CTA", "nao abrir com logo"]
+}

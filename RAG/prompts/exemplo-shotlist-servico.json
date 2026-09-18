@@ -1,0 +1,68 @@
+{
+  "campanha": "servico-antes-depois",
+  "cliente": "marca-servico-exemplo",
+  "data": "2026-06-17",
+  "round": 1,
+  "objetivo": "exemplo de shot-list para servico com prova visual",
+  "tipo_marca": "servico",
+  "formato": "vertical 9:16 mobile/TikTok",
+  "duracao_total_seg": 20,
+  "modelo": "nano_banana_2 (Higgsfield CLI - generate create, refs via --image, sem Soul)",
+  "referencias_obrigatorias": [
+    "RAG/identidade-visual/brand1.png"
+  ],
+  "anchor_personagem": "Same service brand identity from the reference images: clean teal and white color system, rounded modern interface cards, friendly human-centered visual tone, crisp minimal composition. Modern service explainer style, vertical 9:16 frame.",
+  "cenas": [
+    {
+      "n": 1,
+      "tag": "hook-dor",
+      "tempo_seg": "0-4",
+      "intencao": "Mostrar a dor do cliente",
+      "personagem_visivel": "ausente",
+      "prompt": "Modern service explainer style, vertical 9:16 frame. Medium shot of a small business owner overwhelmed by messy notes and many browser tabs, teal and white ambient accents, clear visual stress, no readable text, no logo, clean composition.",
+      "salvar_em": "output/imagens/servico-cena-01-dor.png"
+    },
+    {
+      "n": 2,
+      "tag": "solucao",
+      "tempo_seg": "4-8",
+      "intencao": "Apresentar a solucao da marca",
+      "personagem_visivel": "completo",
+      "prompt": "Same service brand identity from the reference images: clean teal and white color system, rounded modern interface cards, friendly human-centered visual tone. Laptop screen showing abstract organized dashboard shapes without readable text, calm desk scene, vertical 9:16 frame.",
+      "salvar_em": "output/imagens/servico-cena-02-solucao.png"
+    },
+    {
+      "n": 3,
+      "tag": "prova",
+      "tempo_seg": "8-12",
+      "intencao": "Mostrar organizacao e resultado",
+      "personagem_visivel": "completo",
+      "prompt": "Modern service explainer style, same teal and white brand identity from the reference images, before-and-after composition using abstract cards and clean visual blocks, no readable text, organized workflow feeling, vertical 9:16 frame.",
+      "salvar_em": "output/imagens/servico-cena-03-prova.png"
+    },
+    {
+      "n": 4,
+      "tag": "lifestyle",
+      "tempo_seg": "12-16",
+      "intencao": "Mostrar uso em contexto real",
+      "personagem_visivel": "parcial",
+      "prompt": "Medium candid shot of a relaxed business owner checking a clean dashboard on laptop, same service brand identity from the reference images with teal and white accents, natural daylight, modern workspace, vertical 9:16 frame.",
+      "salvar_em": "output/imagens/servico-cena-04-lifestyle.png"
+    },
+    {
+      "n": 5,
+      "tag": "cta-clean",
+      "tempo_seg": "16-20",
+      "intencao": "Fechamento limpo com espaco para CTA",
+      "personagem_visivel": "completo",
+      "prompt": "Clean final service brand frame, abstract teal and white rounded interface cards floating over a bright minimal background, empty space at top and bottom for later text overlay, no text, no logo, no UI labels. Modern service explainer style, vertical 9:16 frame.",
+      "salvar_em": "output/imagens/servico-cena-05-cta.png"
+    }
+  ],
+  "gate_consistencia": {
+    "criterio": "identidade teal/branco e estilo de interface reconheciveis em todas as cenas",
+    "passa": "5/5 ou 4/5",
+    "regerar_cenas_falhas": "3/5 - regerar apenas as cenas falhas com prompt mais especifico e as mesmas referencias",
+    "pausar_para_revisao": "menos de 3/5 - pausar, revisar anchor/referencias com o usuario e nao gastar mais credito no escuro"
+  }
+}

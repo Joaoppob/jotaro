@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jotaro.local/schemas/storyboard.schema.json",
+  "title": "Jotaro storyboard contract",
+  "type": "object",
+  "required": ["campanha", "cliente", "plataforma", "cenas"],
+  "properties": {
+    "campanha": { "type": "string" },
+    "cliente": { "type": "string" },
+    "plataforma": { "type": "string" },
+    "formato": { "type": "string", "pattern": "9:16" },
+    "n_cenas": { "type": "integer", "minimum": 1 },
+    "cenas": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["n", "beat_narrativo", "descricao_visual", "mood", "duracao_seg", "cena_brief"],
+        "properties": {
+          "n": { "type": "integer" },
+          "beat_narrativo": { "type": "string", "description": "Ex: gancho, desenvolvimento-1, cta" },
+          "descricao_visual": { "type": "string", "description": "O que aparece na cena, em linguagem natural PT-BR" },
+          "mood": { "type": "string" },
+          "duracao_seg": { "type": "integer" },
+          "personagem_presente": { "enum": ["completo", "parcial", "ausente"] },
+          "personagem": {
+            "type": ["string", "null"],
+            "description": "ADITIVO (asset-first). Chave de personagem desta cena: nome da subpasta em RAG/identidade-visual/<char>/ (ex: \"nina\"), um coletivo (ex: \"trio\"), ou null para sujeito unico / sem personagem literal. Opcional; storyboards de sujeito unico (mago) omitem ou usam null."
+          },
+          "fonte": {
+            "enum": ["biblioteca", "geracao"],
+            "description": "ADITIVO (asset-first). \"biblioteca\" = a cena reaproveita um asset ja existente (curadoria, custo 0); \"geracao\" = a cena sera gerada (legado/default). Opcional: ausente equivale a \"geracao\"."
+          },
+          "asset_path": {
+            "type": ["string", "null"],
+            "description": "ADITIVO (asset-first). Quando fonte=biblioteca: path relativo do asset escolhido, DENTRO de RAG/identidade-visual/ (ex: \"RAG/identidade-visual/nina/zoe_05_cafe.png\"). Quando fonte=geracao: deve ser null. A regra condicional fonte<->asset_path e validada pelo verify (o validador do projeto nao tem condicionais)."
+          },
+          "cinematografia": {
+            "type": "object",
+            "description": "ADITIVO (nivel-100). Intencao cinematografica por cena: plano, composicao vertical 9:16, luz, paleta e movimento de camera. Opcional para compatibilidade com exemplos antigos."
+          },
+          "anti_ia": {
+            "type": "object",
+            "description": "ADITIVO (nivel-100). Guardrails de ausencia de tell IA antes de gastar credito: evitar e foco. O gate real C8-C11 acontece pos-render."
+          },
+          "cena_brief": {
+            "type": "object",
+            "additionalProperties": false,
+            "description": "ADITIVO (projeto dentro de projeto). Brief da cena como projeto filho: objetivo, mensagem, metodo, execucao, arco e teste vampiro.",
+            "required": [
+              "cena_id",
+              "objetivo",
+              "o_que_comunica",
+              "metodo_comunicacao",
+              "como_comunica",
+              "arco",
+              "sobrevive_sozinha",
+              "motivo_teste_vampiro"
+            ],
+            "properties": {
+              "cena_id": { "type": "string", "minLength": 1 },
+              "objetivo": { "type": "string", "minLength": 5 },
+              "o_que_comunica": { "type": "string", "minLength": 10 },
+              "metodo_comunicacao": { "type": "string", "minLength": 10 },
+              "como_comunica": { "type": "string", "minLength": 10 },
+              "arco": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["inicio", "meio", "fim"],
+                "properties": {
+                  "inicio": { "type": "string", "minLength": 5 },
+                  "meio": { "type": "string", "minLength": 5 },
+                  "fim": { "type": "string", "minLength": 5 }
+                }
+              },
+              "sobrevive_sozinha": { "type": "boolean" },
+              "motivo_teste_vampiro": { "type": "string", "minLength": 10 }
+            }
+          }
+        }
+      }
+    }
+  }
+}

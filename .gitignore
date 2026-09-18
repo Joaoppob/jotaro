@@ -1,0 +1,56 @@
+# === Outputs (nao versionar, so os .gitkeep das pastas) ===
+# Multi-projeto: output em projects/<nome>/output/ (e templates/<nome>/output/).
+# Os globs **/output/ cobrem qualquer projeto/template de uma vez.
+**/output/imagens/*
+!**/output/imagens/.gitkeep
+**/output/clips/*
+!**/output/clips/.gitkeep
+**/output/reels/*
+!**/output/reels/.gitkeep
+
+# === Projetos de cliente (material privado, NAO versionar) ===
+# Demo embarcado (example-brand) e versionado; qualquer outro
+# projeto dentro de projects/ e material real de cliente e fica local
+# (assets pesados + material confidencial) -- allowlist explicita, nao
+# depende de saber o nome de cada cliente com antecedencia.
+projects/*/
+!projects/example-brand/
+!projects/README.md
+
+# === Caixa de entrada Raw/ (conteudo NAO versionado, so o esqueleto) ===
+# O usuario deposita material aqui e o Jotaro organiza via /importa (move pra projects/).
+# Ignora todo o conteudo solto, mantem o esqueleto rastreavel (.gitkeep + README).
+Raw/**
+!Raw/.gitkeep
+!Raw/README.md
+
+# === Temporarios e estado de pipeline (por projeto) ===
+tmp/
+**/output/.pipeline-state.json
+**/output/.pipeline-state.json.corrupt-*
+**/output/.pipeline-state.json.lock
+**/output/.credit-ledger.jsonl
+**/output/.intake-state.json
+**/output/.anim-*.json
+**/output/.last-*
+.claude/state/.review-cadence.json
+.claude/state/.jotaro-profile.json
+.claude/state/.gate-pass.json
+.claude/state/.approval-secret
+.claude/state/*.corrupt-*
+**/*.tmp
+
+# === Credenciais - NUNCA versionar (OAuth e por-usuario, em ~/.claude/) ===
+.credentials.json
+*.credentials.json
+.env
+.env.*
+*.secret
+*.key
+*.token
+.claude/settings.local.json
+
+# === Lixo de SO / editor ===
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jotaro.local/schemas/approval-record.schema.json",
+  "title": "Jotaro Jotaro 0.8 approval record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "project_id",
+    "generation_id",
+    "prompt_version",
+    "prompt_hash",
+    "gates_snapshot_hash",
+    "approved_by",
+    "approved_at",
+    "decision",
+    "production_token",
+    "expires_at"
+  ],
+  "properties": {
+    "project_id": { "type": "string", "minLength": 1 },
+    "generation_id": { "type": "string", "minLength": 10 },
+    "prompt_version": { "type": "string", "minLength": 1 },
+    "prompt_hash": { "type": "string", "minLength": 8 },
+    "gates_snapshot_hash": { "type": "string", "minLength": 8 },
+    "approved_by": { "type": "string", "minLength": 1 },
+    "approved_at": { "type": "string", "minLength": 10 },
+    "decision": {
+      "type": "string",
+      "enum": ["approved", "rejected", "variation_requested"]
+    },
+    "production_token": { "type": "string", "minLength": 16 },
+    "expires_at": { "type": "string", "minLength": 10 },
+    "allowed_tools": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "notes": { "type": "string" }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jotaro.local/schemas/review-cadence.schema.json",
+  "title": "Jotaro review cadence state",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "versao",
+    "total_fluxos",
+    "fluxos_desde_revisao",
+    "revisao_obrigatoria_antes_do_proximo_fluxo",
+    "ultima_revisao_em",
+    "atualizado_em",
+    "historico"
+  ],
+  "properties": {
+    "versao": { "type": "integer", "const": 1 },
+    "total_fluxos": { "type": "integer", "minimum": 0 },
+    "fluxos_desde_revisao": { "type": "integer", "minimum": 0 },
+    "revisao_obrigatoria_antes_do_proximo_fluxo": { "type": "boolean" },
+    "ultima_revisao_em": { "type": ["string", "null"] },
+    "atualizado_em": { "type": "string" },
+    "historico": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "titulo": "Mago salva a vila - molde Mini Hero (ExampleHero, TikTok)",
+  "gancho": "A vila medieval pega no contra-plongee da hora dourada com uma horda de monstros avancando direto pra camera: o slime azul, o dragao vermelho, o goblin verde, o verme rosa. A primeira frame ja diz, sozinha, que algo precisa salvar isso agora - e ninguem aparece pra fazer.",
+  "desenvolvimento": [
+    {
+      "beat": 1,
+      "descricao": "Contexto: o mago surge em pose heroica de tres-quartos, capa ao vento, caminho de floresta e a torre de pedra ao fundo na hora dourada. Em uma batida fica claro quem e o heroi e qual o mundo - sem alongar, o cristal do cajado ja comeca a brilhar roxo."
+    },
+    {
+      "beat": 2,
+      "descricao": "Problema: visto de costas em primeiro plano, o mago esta em desvantagem aparente - os inimigos avancam agressivos a meio-passo, contraluz dramatica, poeira no ar. A dor fica nomeada: ele esta sozinho contra a horda, parece nao ter chance."
+    },
+    {
+      "beat": 3,
+      "descricao": "Carga: close do mago erguendo o cajado com as duas maos, cristal roxo emitindo brilho intenso, particulas douradas girando, olhos em ambar, capa ondulando. Tensao maxima e expectativa do disparo - o setup do payoff."
+    },
+    {
+      "beat": 4,
+      "descricao": "Revelacao: o feitico explode. Vortice roxo-magenta gigante irrompe das maos, raios de energia e particulas douradas varrem os monstros pra tras com motion blur. A virada de jogo - o payoff que o gancho prometeu, e ele chega antes do fim."
+    }
+  ],
+  "cta": "Vila salva, castelo intacto, ceu de amanhecer: o mago de pe com o cajado fincado. Baixa o ExampleHero agora e seja voce a defender a vila - a composicao fica limpa pro convite final.",
+  "plataforma": "tiktok",
+  "duracao_alvo_seg": 24,
+  "tom": "direto e energetico, cartoon de RPG mobile, sem texto longo",
+  "referencias_usadas": [
+    "RAG/identidade-visual/mage1.png",
+    "RAG/identidade-visual/mage2.png",
+    "RAG/identidade-visual/mage3.png"
+  ]
+}

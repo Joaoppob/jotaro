@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jotaro.local/schemas/project.schema.json",
+  "title": "Jotaro project marker",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["nome", "status"],
+  "properties": {
+    "nome": { "type": "string", "minLength": 1 },
+    "tipo_marca": {
+      "type": "string",
+      "enum": ["personagem", "produto", "servico"]
+    },
+    "modo_visual": {
+      "type": "string",
+      "enum": ["biblioteca", "geracao"],
+      "description": "ADITIVO (asset-first). Modo padrao do projeto: \"biblioteca\" = ja tem biblioteca de personagens populada (RAG/identidade-visual/<char>/), o reel e montado por curadoria (custo de imagem 0); \"geracao\" = legado/default, cada cena e gerada. Opcional: projetos sem o campo continuam validos (default detectado em runtime)."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["ativo", "rascunho", "arquivado"],
+      "description": "ativo = pronto, validado por inteiro; rascunho = em construção, não bloqueia o verify; arquivado = ignorado no scan."
+    },
+    "demo": {
+      "type": "boolean",
+      "description": "true = projeto demo embarcado (ex.: example-brand). Seus traços de marca podem aparecer no HUB como exemplo didático; o verify não trata isso como contaminação."
+    },
+    "elements": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "ADITIVO (0.7). Mapa opcional <personagem-ou-\"produto\"> -> <element_id do Higgsfield> (string). Valor null = Element ainda nao criado (sera criado em runtime na 1a geracao). A chave \"produto\" e reservada para o Element do produto fisico central (criado a partir de RAG/identidade-visual/marca/, mesmo fluxo do Element de personagem) -- e o que o prompt-smith injeta como produto_element_id. Ex.: { \"duda\": \"elm_abc123\", \"produto\": \"elm_def456\" } ou { \"duda\": null }. Objeto livre: as chaves sao nomes de personagem (ou \"produto\") e o validador local nao suporta patternProperties."
+    },
+    "higgsfield_workspace": {
+      "type": "string",
+      "description": "ADITIVO (0.7). Opcional. Id/slug do workspace do Higgsfield para escopar mcp__higgsfield__show_generations ao projeto. Ausente ou \"\" = sem escopo explicito."
+    },
+    "generations": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "ADITIVO (0.8). Configuracao opcional da arvore projects/<marca>/generations/<id>.",
+      "properties": {
+        "root": { "type": "string" },
+        "active_generation_id": { "type": ["string", "null"] }
+      }
+    },
+    "project_brief": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "ADITIVO (0.8). Ponte opcional para o brief estrategico ativo.",
+      "properties": {
+        "required": { "type": "boolean" },
+        "path": { "type": "string" }
+      }
+    },
+    "world_version": {
+      "type": "string",
+      "description": "ADITIVO (0.8). Versao da memoria de mundo em RAG/mundo.md ou world.json."
+    },
+    "descricao": { "type": "string" }
+  }
+}

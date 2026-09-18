@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jotaro.local/schemas/intake.schema.json",
+  "title": "Jotaro intake state contract",
+  "type": "object",
+  "required": ["projeto", "plataforma", "status"],
+  "properties": {
+    "projeto": { "type": "string" },
+    "plataforma": { "enum": ["instagram", "tiktok", "facebook", "youtube", "reels", null] },
+    "objetivo_post": { "type": ["string", "null"] },
+    "objetivo": {
+      "enum": ["awareness", "consideration", "conversion", "retencao", "educacao", "outro", null],
+      "description": "ADITIVO (0.8). Objetivo estrategico normalizado pelo project-brief."
+    },
+    "metrica_primaria": {
+      "enum": ["hook_rate", "hold_rate", "vcr", "ctr", "cpa", "roas", "qualidade_visual", null],
+      "description": "ADITIVO (0.8). Metrica primaria que orienta julgamento dos especialistas."
+    },
+    "nivel_awareness": {
+      "enum": ["fria", "problem-aware", "solution-aware", "product-aware", "retargeting", null],
+      "description": "ADITIVO (0.8). Nivel de consciencia do publico para calibrar contexto e promessa."
+    },
+    "canal": {
+      "enum": ["tiktok", "reels", "youtube_shorts", "outro", null],
+      "description": "ADITIVO (0.8). Canal normalizado usado pelo project-brief."
+    },
+    "formato": {
+      "enum": ["video", "video_mudo", "imagem", null],
+      "description": "ADITIVO (0.8). Formato normalizado usado pelo project-brief."
+    },
+    "estetica": {
+      "enum": ["ugc-native", "polished", "cinematic", "documental", "outro", null],
+      "description": "ADITIVO (0.8). Estetica estrategica preferida para a geracao."
+    },
+    "tem_roteiro": { "type": "boolean" },
+    "tem_personagem": { "type": "boolean" },
+    "personagens": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "ADITIVO (asset-first). Nomes de personagem detectados da biblioteca (subpastas RAG/identidade-visual/<char>/ com imagem). Default []. Sujeito unico (mago): vazio."
+    },
+    "modo_visual": {
+      "enum": ["biblioteca", "geracao", null],
+      "description": "ADITIVO (asset-first). Modo visual detectado: \"biblioteca\" se ha biblioteca de personagem populada; senao \"geracao\". null = ainda nao detectado."
+    },
+    "tipo_conteudo": { "type": ["string", "null"] },
+    "referencias_usuario": { "type": "array", "items": { "type": "string" } },
+    "estrutura_solicitada": {
+      "type": ["string", "null"],
+      "description": "ADITIVO. Estrutura explicita de cenas/fluxo que o usuario descreveu literalmente -- de um fluxo curto (ex.: 'rotina -> fala sobre a situacao -> produto') ate um ROTEIRO DE DIRETOR COMPLETO colado verbatim (cenas cronometradas tipo 'Cena 1: 0-5s: ...', falas atribuidas, indicacao de musica por cena, world-building de abertura). Capturado verbatim, sem resumir. Quando preenchida, tem PRIORIDADE sobre os moldes padrao (hook-first, world-building generico, PAS/AIDA/Hero) no storyboard-director e propaga via project-brief.estrutura_solicitada pros 7 especialistas da Fase 2 (historia/mundo/enredo/camera/montagem/realismo/audio) -- eles encaixam a estrutura pedida, nao a substituem. Default null (usuario nao especificou; agentes decidem com os moldes padrao)."
+    },
+    "lacunas_pendentes": { "type": "array", "items": { "type": "string" } },
+    "status": { "enum": ["em-andamento", "completo", "abandonado"] }
+  }
+}
